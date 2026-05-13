@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /erp/admin-*
+Disallow: /erp/teacher-*
+Disallow: /erp/student-*
+Disallow: /erp/login.html
+
+Sitemap: https://whitebanger.org/sitemap.xml

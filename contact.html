@@ -1,0 +1,821 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | White Banger</title>
+  <meta name="description" content="Have questions? Get in touch with White Banger. Contact us for course inquiries, admissions, or support. Our office is in Kaithal, Haryana." />
+  <link rel="canonical" href="https://whitebanger.org/contact.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://whitebanger.org/contact.html" />
+  <meta property="og:title" content="Contact Us | White Banger" />
+  <meta property="og:description" content="We are here to help. Reach out to White Banger for any queries regarding our skill development programs." />
+  <meta property="og:image" content="https://whitebanger.org/assets/img/logo-main.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://whitebanger.org/contact.html" />
+  <meta property="twitter:title" content="Contact Us | White Banger" />
+  <meta property="twitter:image" content="https://whitebanger.org/assets/img/logo-main.png" />
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/wb-style.min.css" />
+  <link rel="stylesheet" href="assets/css/naisc-nav.css" />
+  <link rel="stylesheet" href="assets/css/wb-header-v2.css" />
+
+  <style>
+    /* Contact page styles */
+    .ct-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Form card */
+    .ct-form-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(26,86,219,0.06);
+    }
+    .ct-form-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111;
+      margin: 0 0 6px;
+    }
+    .ct-form-subtitle {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 28px;
+      line-height: 1.5;
+    }
+    .ct-field {
+      margin-bottom: 18px;
+    }
+    .ct-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 7px;
+    }
+    .ct-label .ct-req {
+      color: #ef4444;
+      margin-left: 2px;
+    }
+    .ct-input,
+    .ct-select,
+    .ct-textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #111;
+      background: #fff;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      box-sizing: border-box;
+    }
+    .ct-input:focus,
+    .ct-select:focus,
+    .ct-textarea:focus {
+      border-color: #1a56db;
+      box-shadow: 0 0 0 3px rgba(26,86,219,0.1);
+    }
+    .ct-input::placeholder,
+    .ct-textarea::placeholder {
+      color: #9ca3af;
+    }
+    .ct-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .ct-phone-wrap {
+      display: flex;
+      gap: 0;
+    }
+    .ct-phone-prefix {
+      padding: 11px 12px;
+      background: #f3f4f6;
+      border: 1.5px solid #d1d5db;
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .ct-phone-wrap .ct-input {
+      border-radius: 0 8px 8px 0;
+    }
+    .ct-submit-btn {
+      width: 100%;
+      background: #1a56db;
+      color: #fff;
+      border: none;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 8px;
+    }
+    .ct-submit-btn:hover { background: #1648c0; transform: translateY(-1px); }
+    .ct-submit-btn:disabled { background: #93c5fd; cursor: not-allowed; transform: none; }
+
+    /* Success state */
+    .ct-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .ct-success-icon {
+      width: 64px; height: 64px;
+      background: #d1fae5;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+    .ct-success h3 {
+      font-size: 20px; font-weight: 800; color: #111; margin: 0 0 8px;
+    }
+    .ct-success p {
+      font-size: 14px; color: #666; line-height: 1.6; max-width: 340px; margin: 0 auto 20px;
+    }
+
+    /* Contact info panel */
+    .ct-info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .ct-info-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 22px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .ct-info-card:hover {
+      border-color: #93c5fd;
+      box-shadow: 0 4px 16px rgba(26,86,219,0.07);
+    }
+    .ct-info-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: #eff6ff;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ct-info-icon svg { width: 20px; height: 20px; color: #1a56db; fill: #1a56db; }
+    .ct-info-icon.green { background: #d1fae5; }
+    .ct-info-icon.green svg { color: #059669; fill: #059669; }
+    .ct-info-icon.gold { background: #fef9c3; }
+    .ct-info-icon.gold svg { color: #92400e; fill: #92400e; }
+    .ct-info-label {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: #9ca3af; margin: 0 0 4px;
+    }
+    .ct-info-value {
+      font-size: 14px; font-weight: 700; color: #111; line-height: 1.5; margin: 0;
+    }
+    .ct-info-sub {
+      font-size: 12px; color: #666; margin: 2px 0 0;
+    }
+
+    /* Quick action buttons */
+    .ct-quick-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .ct-quick-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .ct-quick-btn.whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+    .ct-quick-btn.whatsapp:hover { background: #1dba58; }
+    .ct-quick-btn.call {
+      background: #1a56db;
+      color: #fff;
+    }
+    .ct-quick-btn.call:hover { background: #1648c0; }
+
+    /* Hours banner */
+    .ct-hours-banner {
+      background: linear-gradient(90deg, #1a56db, #1d4ed8);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ct-hours-banner span { color: #fff; font-size: 13px; font-weight: 500; line-height: 1.5; }
+    .ct-hours-banner strong { color: #FBB50E; }
+
+    /* Map section */
+    .ct-map-section {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 420px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      margin-top: 48px;
+    }
+    .ct-map-section iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .ct-grid { grid-template-columns: 1fr; }
+      .ct-form-card { padding: 28px 22px; }
+      .ct-map-section { height: 320px; margin-top: 32px; }
+    }
+    @media (max-width: 480px) {
+      .ct-form-card { padding: 22px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class="wb-topbar" id="wb-topbar">
+    <div class="wb-container">
+      <div class="wb-topbar-marquee">
+        <div class="wb-topbar-track">
+          <span class="wb-topbar-item">New AI &amp; Digital Marketing Batches Starting Soon | Limited Seats | <a href="contact.html">Enroll Now →</a></span>
+          <span class="wb-topbar-item">Get Industry-Ready with Real Projects + Placement Support | <a href="contact.html">Enroll Now →</a></span>
+          <span class="wb-topbar-item">Certified by Google, Meta, HubSpot &amp; Microsoft Partners | <a href="contact.html">Enroll Now →</a></span>
+          <span class="wb-topbar-item">New AI &amp; Digital Marketing Batches Starting Soon | Limited Seats | <a href="contact.html">Enroll Now →</a></span>
+          <span class="wb-topbar-item">Get Industry-Ready with Real Projects + Placement Support | <a href="contact.html">Enroll Now →</a></span>
+          <span class="wb-topbar-item">Certified by Google, Meta, HubSpot &amp; Microsoft Partners | <a href="contact.html">Enroll Now →</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <style>
+    .wb-nav .wb-nav-link+.wb-nav-link::before,
+    .wb-nav .wb-nav-dropdown+.wb-nav-link::before,
+    .wb-nav .wb-nav-link+.wb-nav-dropdown>a::before,
+    .wb-nav .wb-nav-dropdown+.wb-nav-dropdown>a::before {
+      content: '|'; margin-right: 10px; color: #b0bcd0; font-weight: 300; font-size: 13px;
+    }
+  </style>
+  <header class="wb-header" id="wb-header">
+    <div class="wb-container wb-nav-inner">
+      <a href="index.html" class="wb-logo">
+        <img src="assets/img/logo-main.png" alt="White Banger" class="wb-logo-img">
+      </a>
+      <nav class="wb-nav" id="wb-nav">
+        <a href="index.html" class="wb-nav-link">Home</a>
+        <div class="wb-nav-dropdown">
+          <a href="#" class="wb-nav-link"><span>About</span> <span class="wb-dropdown-arrow">▼</span></a>
+          <div class="wb-dropdown-menu">
+            <a href="about.html">About White Banger</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="#">Gallery</a>
+            <a href="#">Media Spotlight</a>
+            <a href="mous-collaboration.html">MOUs and Collaborations</a>
+            <a href="approvals-accreditations.html">Approvals and Accreditations</a>
+          </div>
+        </div>
+        <div class="wb-nav-dropdown">
+          <a href="index.html#courses" class="wb-nav-link"><span>Courses</span> <span class="wb-dropdown-arrow">▼</span></a>
+          <div class="wb-dropdown-menu">
+            <a href="course.html?id=digital-marketing">Digital Marketing</a>
+            <a href="ai-automation.html">AI &amp; Automation</a>
+            <a href="banking-finance.html">Banking &amp; Finance</a>
+            <a href="cloud-management.html">Cloud Management</a>
+            <a href="software-development.html">Software Development</a>
+            <a href="ui-ux.html">UI/UX Design</a>
+            <a href="graphic-design.html">Graphic Design</a>
+            <a href="web-development.html">Web Designing &amp; Development</a>
+          </div>
+        </div>
+        <div class="wb-nav-dropdown">
+          <a href="#" class="wb-nav-link"><span>Student Zone</span> <span class="wb-dropdown-arrow">▼</span></a>
+          <div class="wb-dropdown-menu">
+            <a href="admission-form.html">Enquiry / Admission Form</a>
+            <a href="id-card.html">ID Card</a>
+            <a href="exam-admit-card.html">Exam Admit Card</a>
+            <a href="exam-result.html">Exam Result</a>
+            <a href="exam-schedule.html">Examination Schedule</a>
+            <a href="certificate-verification.html">Certificate Verification</a>
+            <a href="online-payment.html">Online Payment</a>
+          </div>
+        </div>
+        <a href="industry-experts.html" class="wb-nav-link">Industry Experts</a>
+        <div class="wb-nav-dropdown">
+          <a href="testimonials.html" class="wb-nav-link"><span>Student Review</span> <span class="wb-dropdown-arrow">▼</span></a>
+          <div class="wb-dropdown-menu">
+            <a href="testimonials.html">Testimonials</a>
+            <a href="international-placements.html">International Placements</a>
+            <a href="national-placements.html">National Placements</a>
+            <a href="blast-from-the-past.html">Blast from the Past</a>
+          </div>
+        </div>
+        <a href="contact.html" class="wb-nav-link wb-active">Contact</a>
+      </nav>
+      <a href="internship.html" class="wb-nav-intern">
+        <span class="wb-nb-icon">&#128188;</span><span class="wb-nb-text"> Internship</span>
+        <span class="intern-live-dot"></span>
+      </a>      <a href="naveen-avsar-yojana.html" class="wb-nav-naisc">
+        <img src="assets/img/naveen-jindal-foundation-logo.png" class="naisc-njf-mini" alt="" onerror="this.style.display='none'">
+        <span class="wb-nb-icon">&#127963;&#65039;</span><span class="wb-nb-text"> Naveen Avsar</span>
+        <span class="naisc-live-dot"></span>
+      </a>
+      <a href="//erp.whitebanger.org/login.html" class="wb-btn wb-btn-primary">Login</a>
+      <button class="wb-hamburger" id="wb-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="wb-page-hero">
+    <div class="wb-container">
+      <div class="wb-hero-inner" style="max-width:560px">
+        <div class="wb-breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="wb-bc-sep">|</span>
+          <span class="wb-bc-current">Contact Us</span>
+        </div>
+        <h1 class="wb-hero-page-title">How May We Help You?</h1>
+        <p style="color:rgba(255,255,255,0.82);font-size:15px;line-height:1.65;margin:12px 0 0">
+          Fill in the enquiry form and our counsellor will reach you within 24 hours.
+          Or simply call or WhatsApp us directly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       MAIN: Form + Info
+  ====================================================== -->
+  <section class="wb-section" style="padding:60px 0">
+    <div class="wb-container">
+      <div class="ct-grid">
+
+        <!-- LEFT: Enquiry Form -->
+        <div class="ct-form-card">
+          <h2 class="ct-form-title">Send Us an Enquiry</h2>
+          <p class="ct-form-subtitle">Your details go directly into our CRM. A counsellor will follow up with you shortly.</p>
+
+          <!-- The form: class wb-db-form triggers wb-database.js auto-integration -->
+          <form
+            id="contact-enquiry-form"
+            class="wb-db-form"
+            data-collection="contact_enquiries"
+            autocomplete="off"
+          >
+            <!-- Full Name -->
+            <div class="ct-field">
+              <label class="ct-label" for="ct-name">
+                Full Name <span class="ct-req">*</span>
+              </label>
+              <input
+                type="text"
+                id="ct-name"
+                name="fullname"
+                class="ct-input"
+                placeholder="e.g. Arjun Sharma"
+                required
+                autocomplete="name"
+              >
+            </div>
+
+            <!-- WhatsApp Number -->
+            <div class="ct-field">
+              <label class="ct-label" for="ct-phone">
+                WhatsApp Number <span class="ct-req">*</span>
+              </label>
+              <div class="ct-phone-wrap">
+                <span class="ct-phone-prefix">🇮🇳 +91</span>
+                <input
+                  type="tel"
+                  id="ct-phone"
+                  name="phone"
+                  class="ct-input"
+                  placeholder="9XXXXXXXXX"
+                  pattern="[6-9][0-9]{9}"
+                  maxlength="10"
+                  required
+                  autocomplete="tel-national"
+                >
+              </div>
+              <div style="font-size:11px;color:#9ca3af;margin-top:5px">We will reach you via WhatsApp within 24 hours.</div>
+            </div>
+
+            <!-- Email -->
+            <div class="ct-field">
+              <label class="ct-label" for="ct-email">Email Address</label>
+              <input
+                type="email"
+                id="ct-email"
+                name="email"
+                class="ct-input"
+                placeholder="you@example.com"
+                autocomplete="email"
+              >
+            </div>
+
+            <!-- Course of Interest -->
+            <div class="ct-field">
+              <label class="ct-label" for="ct-course">
+                Course of Interest <span class="ct-req">*</span>
+              </label>
+              <select id="ct-course" name="course" class="ct-select" required>
+                <option value="" disabled selected>Select a course</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="AI &amp; Automation">AI &amp; Automation</option>
+                <option value="Banking &amp; Finance">Banking &amp; Finance</option>
+                <option value="Cloud Management">Cloud Management</option>
+                <option value="Software Development">Software Development</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Web Designing &amp; Development">Web Designing &amp; Development</option>
+                <option value="Naveen Avsar Skill Centre">🏛️ Naveen Avsar International Skill Centre</option>
+                <option value="General Enquiry">General Enquiry / Not Sure Yet</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="ct-field">
+              <label class="ct-label" for="ct-message">Message <span style="color:#9ca3af;font-weight:400">(optional)</span></label>
+              <textarea
+                id="ct-message"
+                name="message"
+                class="ct-textarea"
+                placeholder="Tell us what you are looking for, your background, or any questions you have..."
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="ct-submit-btn" id="ct-submit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              Send Enquiry
+            </button>
+          </form>
+
+          <!-- Success state (shown after submission) -->
+          <div class="ct-success" id="ct-success">
+            <div class="ct-success-icon">✅</div>
+            <h3>Enquiry Received!</h3>
+            <p>
+              Thank you. Your enquiry has been added to our CRM and a counsellor will
+              contact you on WhatsApp within 24 hours.
+            </p>
+            <a href="index.html" class="wb-btn wb-btn-primary" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none">
+              ← Back to Home
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact Info -->
+        <div class="ct-info-panel">
+
+          <!-- Hours banner -->
+          <div class="ct-hours-banner">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBB50E" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Office hours: <strong>9:00 AM to 6:00 PM</strong>, Monday to Saturday</span>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="ct-info-card">
+            <div class="ct-info-icon green">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.513-18.397A11.966 11.966 0 0012.046.012h-.002A11.942 11.942 0 000 11.956c0 1.956.51 3.864 1.478 5.541l-1.475 5.39L5.512 21.41A11.921 11.921 0 0012.042 23.97v-.001c6.588 0 11.953-5.365 11.956-11.951.001-3.193-1.24-6.199-3.496-8.455"/></svg>
+            </div>
+            <div>
+              <div class="ct-info-label">WhatsApp</div>
+              <p class="ct-info-value">+91 97283-20132</p>
+              <p class="ct-info-sub">+91 97291-72576</p>
+              <p class="ct-info-sub" style="color:#059669;margin-top:4px;font-weight:600">Available 24/7</p>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="ct-info-card">
+            <div class="ct-info-icon">
+              <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+            </div>
+            <div>
+              <div class="ct-info-label">Call Us</div>
+              <p class="ct-info-value">+91 97283-20132</p>
+              <p class="ct-info-sub">Mon to Sat, 9 AM to 6 PM</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="ct-info-card">
+            <div class="ct-info-icon gold">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/></svg>
+            </div>
+            <div>
+              <div class="ct-info-label">Email</div>
+              <p class="ct-info-value">info@whitebanger.org</p>
+              <p class="ct-info-sub">prikshit@whitebanger.org</p>
+            </div>
+          </div>
+
+          <!-- Office Address -->
+          <div class="ct-info-card">
+            <div class="ct-info-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <div class="ct-info-label">Our Office</div>
+              <p class="ct-info-value" style="font-size:13px;font-weight:600">White Banger Tech Private Limited</p>
+              <p class="ct-info-sub">1st Floor, Gupta Tower, Ambala Rd,<br>Near Hindu Girls School,<br>Kaithal, Haryana 136027</p>
+            </div>
+          </div>
+
+          <!-- Quick action buttons -->
+          <div class="ct-quick-btns">
+            <a href="https://wa.me/919728320132?text=Hi%2C%20I%20have%20an%20enquiry%20about%20White%20Banger%20courses."
+               target="_blank" class="ct-quick-btn whatsapp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.513-18.397A11.966 11.966 0 0012.046.012h-.002A11.942 11.942 0 000 11.956c0 1.956.51 3.864 1.478 5.541l-1.475 5.39L5.512 21.41A11.921 11.921 0 0012.042 23.97v-.001c6.588 0 11.953-5.365 11.956-11.951.001-3.193-1.24-6.199-3.496-8.455"/></svg>
+              Chat on WhatsApp
+            </a>
+            <a href="tel:+919728320132" class="ct-quick-btn call">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+              Call Now
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="ct-map-section">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13783.5684497645!2d76.3908867379639!3d29.809160533618456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3912a7ebafb7ebdb%3A0xe452eb8eebe98858!2sHindu%20Girls%20College!5e0!3m2!1sen!2sin!4v1711222222222!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="White Banger Office Location, Kaithal, Haryana">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="wb-footer">
+    <div class="wb-container">
+      <div class="wb-footer-top">
+        <div class="wb-footer-col wb-footer-brand">
+          <a href="index.html" class="wb-logo">
+            <img src="assets/img/logo-main.png" alt="White Banger" class="wb-logo-img">
+          </a>
+          <address class="wb-footer-contact">
+            <div class="wb-footer-contact-item">
+              <span class="wb-fc-icon-wrap wb-fc-whatsapp">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+              </span>
+              <div class="wb-fc-text"><small>WhatsApp</small><strong>+91 97283-20132</strong></div>
+            </div>
+            <div class="wb-footer-contact-item">
+              <span class="wb-fc-icon-wrap wb-fc-email">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/></svg>
+              </span>
+              <div class="wb-fc-text"><small>Email</small><strong>prikshit@whitebanger.org</strong></div>
+            </div>
+          </address>
+        </div>
+        <div class="wb-footer-col">
+          <h5 class="wb-footer-heading">About WB</h5>
+          <ul class="wb-footer-links">
+            <li><a href="about.html">About us</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="mous-collaboration.html">MOUs and Collaborations</a></li>
+            <li><a href="naveen-avsar-yojana.html" style="color:#1a56db;font-weight:600">🏛️ Naveen Avsar Skill Centre</a></li>
+            <li><a href="approvals-accreditations.html">Approvals and Accreditations</a></li>
+          </ul>
+        </div>
+        <div class="wb-footer-col">
+          <h5 class="wb-footer-heading">Student Zone</h5>
+          <ul class="wb-footer-links">
+            <li><a href="exam-schedule.html">Exam Schedule</a></li>
+            <li><a href="exam-result.html">Results</a></li>
+            <li><a href="online-payment.html">Online Payment</a></li>
+            <li><a href="admission-form.html">Admission Form</a></li>
+          </ul>
+        </div>
+        <div class="wb-footer-col">
+          <h5 class="wb-footer-heading">Connect with us</h5>
+          <div class="wb-social-links wb-social-blue">
+            <a href="#" class="wb-social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" class="wb-social-icon" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+            <a href="#" class="wb-social-icon" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+            <a href="#" class="wb-social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="4" ry="4"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+          </div>
+          <div class="wb-app-badges wb-app-badges-column">
+            <a href="#" class="wb-app-badge"><img src="assets/img/google-play-badge.png" alt="Get it on Google Play"></a>
+            <a href="#" class="wb-app-badge"><img src="assets/img/app-store-badge.png" alt="Download on the App Store"></a>
+          </div>
+        </div>
+      </div>
+      <div class="wb-footer-bottom">
+        <div class="wb-footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Sitemap</a>
+        </div>
+        <p class="wb-footer-copy">Copyright &copy; 2026 White Banger | Powered by White Banger Tech Private Limited</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <aside aria-label="Floating Actions" class="wb-floating-buttons">
+    <div class="wb-fab-popup" id="wbPopupCall">
+      <div class="wb-popup-header">
+        <span class="wb-popup-title">Call Us Directly</span>
+        <button class="wb-popup-close" id="wbCloseCall">&times;</button>
+      </div>
+      <div class="wb-popup-body">
+        <p>Phone lines open <strong>9:00 AM to 6:00 PM</strong>, Monday to Saturday.</p>
+        <a href="tel:+919728320132" class="wb-btn wb-btn-primary wb-btn-full">Call Now</a>
+      </div>
+    </div>
+    <div class="wb-fab-popup" id="wbPopupWhatsapp">
+      <div class="wb-popup-header wb-whatsapp-header">
+        <img src="assets/img/inquiry-modal-bg.png" alt="Support" class="wb-wa-avatar">
+        <div class="wb-wa-info">
+          <span class="wb-wa-title">Chat with us</span>
+          <span class="wb-wa-status">We reply within 10-20 minutes</span>
+        </div>
+        <button class="wb-popup-close" id="wbCloseWhatsapp">&times;</button>
+      </div>
+      <div class="wb-popup-body">
+        <p>WhatsApp support available <strong>24/7</strong>.</p>
+        <a href="https://wa.me/919728320132" target="_blank" class="wb-btn wb-btn-whatsapp wb-btn-full">Start Chat</a>
+      </div>
+    </div>
+    <button class="wb-fab wb-fab-inquiry" id="wbFabInquiry" aria-label="Enquiry Now">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    </button>
+    <button class="wb-fab wb-fab-whatsapp" id="wbFabWhatsappBtn" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.513-18.397A11.966 11.966 0 0012.046.012h-.002A11.942 11.942 0 000 11.956c0 1.956.51 3.864 1.478 5.541l-1.475 5.39L5.512 21.41A11.921 11.921 0 0012.042 23.97v-.001c6.588 0 11.953-5.365 11.956-11.951.001-3.193-1.24-6.199-3.496-8.455"/></svg>
+    </button>
+    <button class="wb-fab wb-fab-call" id="wbFabCallBtn" aria-label="Call">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+    </button>
+  </aside>
+
+  <!-- Inquiry Modal (standard WB modal) -->
+  <div class="wb-modal" id="wbInquiryModal">
+    <div class="wb-modal-content wb-modal-inquiry">
+      <div class="wb-modal-inquiry-left">
+        <div class="wb-modal-inquiry-left-content">
+          <h3>Start Your Journey</h3>
+          <p>Join White Banger and accelerate your career. Our support team is available 24/7 to assist you.</p>
+        </div>
+      </div>
+      <div class="wb-modal-inquiry-right">
+        <button class="wb-modal-close" id="wbInquiryClose">&times;</button>
+        <h4 class="wb-modal-inquiry-title">Quick Enquiry</h4>
+        <form class="wb-inquiry-form wb-db-form" id="wbInquiryForm" data-collection="general_enquiries">
+          <div class="wb-form-group has-icon">
+            <span class="wb-input-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>
+            <input type="text" name="fullname" placeholder="Your Full Name" required>
+          </div>
+          <div class="wb-form-group has-icon">
+            <span class="wb-input-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
+            <input type="tel" name="phone" placeholder="WhatsApp Number" required>
+          </div>
+          <div class="wb-form-group has-icon">
+            <span class="wb-input-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>
+            <select name="course">
+              <option value="">Select Course of Interest</option>
+              <option>Digital Marketing</option>
+              <option>AI &amp; Automation</option>
+              <option>Banking &amp; Finance</option>
+              <option>Software Development</option>
+              <option>UI/UX Design</option>
+              <option>Graphic Design</option>
+              <option>Web Designing &amp; Development</option>
+              <option>Naveen Avsar International Skill Centre</option>
+            </select>
+          </div>
+          <button type="submit" class="wb-btn wb-btn-primary wb-btn-full">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            Submit Enquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/wb-script.min.js"></script>
+
+  <!-- CRM Integration: auto-submits contact-enquiry-form to Firestore + crm_leads -->
+  <script type="module" src="assets/js/wb-database.js"></script>
+
+  <!-- Override: show inline success instead of alert + redirect for contact form -->
+  <script type="module">
+    import { submitFormToDatabase } from './assets/js/wb-database.js';
+
+    const form = document.getElementById('contact-enquiry-form');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation(); // prevent wb-database.js double-attach
+
+        const btn = document.getElementById('ct-submit');
+        const origHTML = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="animation:spin 1s linear infinite"><path d="M12 2a10 10 0 00-9.95 9H0l4 4 4-4H5.05A7 7 0 1 1 12 19v3a10 10 0 000-20z"/></svg> Sending...';
+
+        try {
+          // Build payload matching CRM field names exactly
+          const data = new FormData(form);
+          const followUpDate = new Date(Date.now() + 86400000 * 3).toISOString().split('T')[0];
+
+          // Import Firestore directly
+          const { db } = await import('./assets/js/wb-database.js');
+          const { collection, addDoc, serverTimestamp } = await import(
+            'https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js'
+          );
+
+          // 1. Save to contact_enquiries
+          const contactDoc = await addDoc(collection(db, 'contact_enquiries'), {
+            fullname:    data.get('fullname'),
+            phone:       data.get('phone'),
+            email:       data.get('email') || '',
+            course:      data.get('course'),
+            message:     data.get('message') || '',
+            source:      'Contact Form',
+            submittedAt: serverTimestamp(),
+            pageUrl:     window.location.href,
+          });
+
+          // 2. Mirror to crm_leads (appears instantly in CRM Kanban)
+          await addDoc(collection(db, 'crm_leads'), {
+            name:        data.get('fullname'),
+            phone:       data.get('phone'),
+            email:       data.get('email') || '',
+            course:      data.get('course') || 'General Enquiry',
+            source:      'Contact Form',
+            stage:       'new',
+            followUp:    followUpDate,
+            notes:       data.get('message') || '',
+            submittedAt: serverTimestamp(),
+            referenceId: contactDoc.id,
+          });
+
+          // Show inline success
+          form.style.display = 'none';
+          document.getElementById('ct-success').style.display = 'block';
+
+        } catch (err) {
+          console.error('Contact form error:', err);
+          btn.disabled = false;
+          btn.innerHTML = origHTML;
+          alert('Sorry, something went wrong. Please call us on +91 97283-20132 or try again.');
+        }
+      }, { once: false });
+    }
+  </script>
+
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+
+</body>
+</html>
