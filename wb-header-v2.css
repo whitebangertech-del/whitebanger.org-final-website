@@ -1,0 +1,297 @@
+/* ================================================================
+   WB Header v2 — Two-row horizontal layout
+   Row 1 (white): Logo  ···  💼 Internship | 🏛️ Naveen Avsar | Login
+   Row 2 (brand blue-tint, centered): Full navigation bar
+   Palette: primary #1a56db · gold #FBB50E · text #2d3b55
+   ================================================================ */
+
+/* ── 1. Kill the language switcher everywhere ── */
+.wb-lang-switch {
+  display: none !important;
+}
+
+/* ── 2. Kill pipe separators ── */
+.wb-nav .wb-nav-link + .wb-nav-link::before,
+.wb-nav .wb-nav-dropdown + .wb-nav-link::before,
+.wb-nav .wb-nav-link + .wb-nav-dropdown > a::before,
+.wb-nav .wb-nav-dropdown + .wb-nav-dropdown > a::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* ── 3. Suppress separators before animated buttons (in any context) ── */
+.wb-nav .wb-nav-naisc::before,
+.wb-nav .wb-nav-link ~ .wb-nav-naisc::before,
+.wb-nav .wb-nav-intern ~ .wb-nav-naisc::before,
+.wb-nav .wb-nav-intern::before,
+.wb-nav .wb-nav-link ~ .wb-nav-intern::before,
+.wb-nav .wb-nav-dropdown ~ .wb-nav-intern::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* ── 4. Label text — shown by default, hidden on mobile below ── */
+.wb-nb-text {}
+
+/* ================================================================
+   DESKTOP TWO-ROW LAYOUT  (≥ 901 px)
+   ================================================================ */
+@media (min-width: 901px) {
+
+  /* ── Header shell ── */
+  .wb-header {
+    padding:    0                             !important;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.09)  !important;
+  }
+
+  /* ── Flex-wrap container — Row 1 ── */
+  .wb-nav-inner {
+    display:     flex        !important;
+    flex-wrap:   wrap        !important;
+    align-items: center      !important;
+    gap:         0           !important;
+    padding:     0           !important;
+    min-height:  70px        !important;  /* keeps Row 1 height stable */
+  }
+
+  /* ══ ROW 1 ══════════════════════════════════════════════════════ */
+
+  /* Logo — far left */
+  .wb-logo {
+    order:       1;
+    flex:        0 0 auto;
+    padding:     9px 0;
+    display:     flex;
+    align-items: center;
+  }
+
+  /* Internship pill — pushed to far right via margin-left:auto */
+  .wb-nav-inner > .wb-nav-intern {
+    order:        2;
+    margin-left:  auto   !important;
+    margin-right: 0      !important;
+    align-self:   center !important;
+    flex-shrink:  0;
+  }
+
+  /* Naveen Avsar pill — immediately after Internship */
+  .wb-nav-inner > .wb-nav-naisc {
+    order:        3;
+    margin-left:  8px    !important;
+    margin-right: 0      !important;
+    align-self:   center !important;
+    flex-shrink:  0;
+  }
+
+  /*
+   * Login CTA — harmonised with the pill buttons
+   * Slightly compact so height aligns with the pills,
+   * with a faint brand-blue left separator and a soft glow.
+   */
+  .wb-nav-inner > a.wb-btn.wb-btn-primary {
+    order:         4;
+    margin-left:   16px          !important;
+    padding:       8px 20px      !important;
+    font-size:     13.5px        !important;
+    font-weight:   600           !important;
+    border-radius: 7px           !important;
+    letter-spacing: 0.015em;
+    white-space:   nowrap;
+    flex-shrink:   0;
+    /* Subtle left divider before the login button */
+    box-shadow:    -1px 0 0 rgba(26,86,219,0.18), 0 2px 10px rgba(26,86,219,0.22) !important;
+  }
+  .wb-nav-inner > a.wb-btn.wb-btn-primary:hover {
+    box-shadow: -1px 0 0 rgba(26,86,219,0.18), 0 4px 16px rgba(26,86,219,0.36) !important;
+    transform:  translateY(-1px);
+  }
+
+  /* Hamburger — hidden on desktop */
+  .wb-hamburger {
+    order:   5;
+    display: none !important;
+  }
+
+  /* ══ ROW 2: Navigation — full width, CENTRED ══════════════════ */
+  .wb-nav {
+    order:           10       !important;
+    flex:            0 0 100% !important;
+    width:           100%     !important;
+    display:         flex     !important;
+    flex-direction:  row      !important;
+    flex-wrap:       nowrap   !important;
+    align-items:     stretch  !important;
+    justify-content: center   !important;
+    gap:             0        !important;
+    margin:          0        !important;
+    padding:         0        !important;
+    /* On-brand separator — blue at very low opacity, not arbitrary grey */
+    border-top:      1px solid rgba(26,86,219,0.13);
+    border-bottom:   2px solid rgba(26,86,219,0.07);
+    background:      #edf2ff;  /* brand-tinted, one step deeper than #f4f7ff */
+  }
+
+  /* Nav links */
+  .wb-nav > .wb-nav-link,
+  .wb-nav > .wb-nav-dropdown > a.wb-nav-link {
+    color:           #2d3b55     !important;
+    font-size:       13.5px      !important;
+    font-weight:     500         !important;
+    letter-spacing:  0.01em;
+    padding:         11px 17px   !important;
+    white-space:     nowrap      !important;
+    display:         inline-flex !important;
+    align-items:     center      !important;
+    gap:             5px         !important;
+    text-decoration: none        !important;
+    border-bottom:   3px solid transparent;
+    transition:      color 0.17s, background 0.17s, border-color 0.17s;
+  }
+
+  .wb-nav > .wb-nav-link:hover,
+  .wb-nav > .wb-nav-dropdown:hover > a.wb-nav-link {
+    color:               #1a56db              !important;
+    background:          rgba(26,86,219,0.08) !important;
+    border-bottom-color: #1a56db;
+  }
+
+  .wb-nav > .wb-nav-link.wb-active {
+    color:               #1a56db              !important;
+    font-weight:         700                  !important;
+    border-bottom-color: #1a56db;
+    background:          rgba(26,86,219,0.06) !important;
+  }
+
+  /* Dropdown chevron — on-brand blue tint */
+  .wb-nav .wb-dropdown-arrow {
+    font-size:  9px     !important;
+    line-height: 1      !important;
+    opacity:    0.55;
+    color:      #1a56db !important;
+    transition: transform 0.18s;
+  }
+  .wb-nav .wb-nav-dropdown:hover .wb-dropdown-arrow {
+    opacity:   0.9;
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown menus */
+  .wb-nav .wb-dropdown-menu {
+    top:           100%                            !important;
+    background:    #fff                            !important;
+    border-radius: 0 0 10px 10px                  !important;
+    border:        1px solid rgba(26,86,219,0.12)  !important;
+    border-top:    3px solid #1a56db               !important;  /* brand accent cap */
+    box-shadow:    0 8px 32px rgba(26,86,219,0.12) !important;
+    padding:       6px 0                           !important;
+    min-width:     215px                           !important;
+  }
+
+  .wb-nav .wb-dropdown-menu a {
+    color:        #2d3b55   !important;
+    font-size:    13.5px    !important;
+    font-weight:  500       !important;
+    padding:      10px 20px !important;
+    letter-spacing: 0.005em;
+    transition:   background 0.15s, color 0.15s, box-shadow 0.15s;
+  }
+
+  .wb-nav .wb-dropdown-menu a:hover {
+    background: #eff6ff                    !important;
+    color:      #1a56db                    !important;
+    /* Left indicator bar — no layout shift (inset shadow) */
+    box-shadow: inset 3px 0 0 #1a56db     !important;
+  }
+
+  /* Neutralise any animated-button margin overrides inside the nav */
+  .wb-nav .wb-nav-intern { margin-left: 0 !important; }
+  .wb-nav .wb-nav-naisc  { margin-left: 0 !important; }
+
+}
+
+/* ================================================================
+   MOBILE (≤ 900 px)
+   ================================================================ */
+@media (max-width: 900px) {
+
+  /* Row 1: Logo + 💼 + 🏛️ + Login + ☰  in one compact line */
+  .wb-nav-inner {
+    display:     flex   !important;
+    flex-wrap:   nowrap !important;
+    align-items: center !important;
+    padding:     9px 0  !important;
+    gap:         0      !important;
+  }
+
+  .wb-logo {
+    flex:  0 0 auto;
+    order: 1;
+  }
+
+  /* Compact emoji-only pill — Internship */
+  .wb-nav-inner > .wb-nav-intern {
+    order:         2;
+    margin-left:   auto    !important;
+    margin-right:  6px     !important;
+    padding:       7px 10px !important;
+    font-size:     15px    !important;
+    border-radius: 7px     !important;
+    flex-shrink:   0;
+  }
+
+  /* Compact emoji-only pill — Naveen Avsar */
+  .wb-nav-inner > .wb-nav-naisc {
+    order:         3;
+    margin-left:   0       !important;
+    margin-right:  6px     !important;
+    padding:       7px 10px !important;
+    font-size:     15px    !important;
+    border-radius: 7px     !important;
+    flex-shrink:   0;
+  }
+
+  /* Hide text labels, dots and NJF logo on mobile — emoji only */
+  .wb-nb-text,
+  .naisc-njf-mini,
+  .intern-live-dot,
+  .naisc-live-dot {
+    display: none !important;
+  }
+
+  /* Login button — same border-radius as pills for visual unity */
+  .wb-nav-inner > a.wb-btn.wb-btn-primary {
+    order:         4;
+    margin-left:   0;
+    flex-shrink:   0;
+    padding:       8px 14px !important;
+    font-size:     13px     !important;
+    border-radius: 7px      !important;
+  }
+
+  /* Hamburger */
+  .wb-hamburger {
+    order:       5;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  /* Mobile nav drawer */
+  .wb-nav {
+    border-top: 2px solid #1a56db !important;
+    background: #f8f9ff;
+  }
+
+  .wb-nav > .wb-nav-link,
+  .wb-nav > .wb-nav-dropdown > a.wb-nav-link {
+    color:       #1a2942   !important;
+    font-size:   14px      !important;
+    font-weight: 500       !important;
+    padding:     13px 22px !important;
+  }
+
+  .wb-nav > .wb-nav-link.wb-active {
+    color:      #1a56db              !important;
+    font-weight: 700                 !important;
+    background: rgba(26,86,219,0.05) !important;
+  }
+}
