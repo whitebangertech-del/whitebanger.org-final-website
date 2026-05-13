@@ -5,66 +5,170 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Startup India Recognition | White Banger</title>
-  <meta name="description" content="White Banger is recognized under Startup India scheme. Join us for government-backed startup and entrepreneurship training." />
+  <meta name="description" content="White Banger is recognized under the Government of India's Startup India initiative — empowering young entrepreneurs with skills, mentorship, and government-backed startup support." />
   <link rel="canonical" href="https://whitebanger.org/startup-india-accreditation.html" />
-
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://whitebanger.org/startup-india-accreditation.html" />
   <meta property="og:title" content="Startup India Recognition | White Banger" />
-  <meta property="og:description" content="White Banger is recognized under Government of India's Startup India scheme for entrepreneurship development." />
+  <meta property="og:description" content="White Banger is recognized under Startup India — empowering entrepreneurs with skills and government-backed support." />
   <meta property="og:image" content="https://whitebanger.org/assets/img/logo-main.png" />
-
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://whitebanger.org/startup-india-accreditation.html" />
-  <meta property="twitter:title" content="Startup India Recognition | White Banger" />
-  <meta property="twitter:description" content="White Banger is recognized under Government of India's Startup India scheme for entrepreneurship development." />
   <meta property="twitter:image" content="https://whitebanger.org/assets/img/logo-main.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/wb-style.min.css" />
   <link rel="stylesheet" href="assets/css/animations.css" />
   <link rel="stylesheet" href="assets/css/naisc-nav.css" />
   <link rel="stylesheet" href="assets/css/wb-header-v2.css" />
+
+  <style>
+    .acc-hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(8px); border-radius: 999px;
+      padding: 6px 16px; font-size: 12px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: #fff; margin-bottom: 20px;
+    }
+    .acc-hero-badge .dot { width: 8px; height: 8px; background: #ffc107; border-radius: 50%; animation: pulse-dot 1.8s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:.7} }
+
+    .acc-trust-bar { background: #f8fafc; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; padding: 32px 0; }
+    .acc-trust-inner { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .acc-trust-item { text-align: center; }
+    .acc-trust-item .num { font-size: 32px; font-weight: 900; color: #dc2626; line-height: 1; }
+    .acc-trust-item .label { font-size: 12px; color: #6b7280; font-weight: 500; margin-top: 4px; }
+    .acc-trust-divider { width: 1px; height: 40px; background: #e5e7eb; }
+
+    .acc-overview-split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+
+    .si-visual {
+      position: relative; border-radius: 20px; overflow: hidden;
+      background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 50%, #dc2626 100%);
+      padding: 48px 40px; color: #fff;
+    }
+    .si-visual::before { content: ''; position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 44px solid rgba(255,255,255,0.05); top: -70px; right: -70px; }
+    .si-visual::after { content: ''; position: absolute; width: 180px; height: 180px; border-radius: 50%; border: 30px solid rgba(255,255,255,0.04); bottom: -40px; left: -40px; }
+    .si-flag-strip {
+      display: flex; gap: 0; height: 6px; border-radius: 3px; overflow: hidden;
+      margin-bottom: 24px; position: relative; z-index: 2;
+    }
+    .si-flag-strip .saffron { flex: 1; background: #FF9933; }
+    .si-flag-strip .white  { flex: 1; background: #fff; }
+    .si-flag-strip .green  { flex: 1; background: #138808; }
+
+    .si-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; position: relative; z-index: 2; }
+    .si-stat-box {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px; padding: 16px;
+    }
+    .si-stat-box .n { font-size: 24px; font-weight: 900; color: #fbbf24; line-height: 1; }
+    .si-stat-box .l { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 4px; line-height: 1.4; }
+    .acc-big-label {
+      font-size: clamp(40px,6vw,72px); font-weight: 900; letter-spacing: -.04em; line-height: 1;
+      color: rgba(255,255,255,0.06); position: absolute; bottom: 16px; right: 24px;
+      pointer-events: none; user-select: none;
+    }
+
+    .acc-overview-content .wb-pill-badge { display: inline-block; padding: 6px 16px; border: 1px solid #e0e0e0; border-radius: 20px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 20px; }
+    .acc-overview-content h2 { font-size: clamp(28px,4vw,40px); font-weight: 800; color: #111; line-height: 1.2; margin-bottom: 20px; letter-spacing: -.02em; }
+    .acc-overview-content h2 span { color: #dc2626; }
+    .acc-overview-content p { font-size: 16px; line-height: 1.8; color: #4b5563; margin-bottom: 16px; }
+
+    /* Journey steps */
+    .si-journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .si-journey::before { content: ''; position: absolute; top: 32px; left: calc(12.5%); right: calc(12.5%); height: 2px; background: linear-gradient(90deg, #dc2626, #f97316, #eab308, #22c55e); z-index: 0; }
+    .si-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 12px; position: relative; z-index: 1; }
+    .si-step-circle {
+      width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 16px; border: 3px solid #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12); transition: transform 0.3s;
+      background: #fff;
+    }
+    .si-step:hover .si-step-circle { transform: scale(1.1); }
+    .si-step h4 { font-size: 14px; font-weight: 700; color: #111; margin-bottom: 6px; }
+    .si-step p { font-size: 12px; color: #6b7280; line-height: 1.5; }
+
+    /* Program cards */
+    .si-programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .si-program-card {
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 16px;
+      padding: 28px 24px; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .si-program-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(220,38,38,0.12); border-color: #fca5a5; }
+    .si-program-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 16px; transition: transform 0.3s; }
+    .si-program-card:hover .si-program-icon { transform: scale(1.1) rotate(-5deg); }
+    .si-program-card h4 { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 8px; }
+    .si-program-card p { font-size: 13px; color: #6b7280; line-height: 1.65; }
+    .si-program-tag { display: inline-block; margin-top: 12px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
+
+    /* Benefit cards */
+    .acc-benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .acc-benefit-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px 24px; text-align: center; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .acc-benefit-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(220,38,38,0.12); border-color: #fca5a5; }
+    .acc-benefit-icon { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 30px; transition: transform 0.3s; }
+    .acc-benefit-card:hover .acc-benefit-icon { transform: scale(1.1) rotate(-5deg); }
+    .acc-benefit-card h4 { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 10px; }
+    .acc-benefit-card p { font-size: 13px; color: #6b7280; line-height: 1.65; }
+
+    /* Testimonial-style quote */
+    .si-quote-section { background: linear-gradient(135deg, #7f1d1d, #b91c1c); border-radius: 24px; padding: 48px; position: relative; overflow: hidden; }
+    .si-quote-section::before { content: '\201C'; font-size: 180px; color: rgba(255,255,255,0.07); position: absolute; top: -20px; left: 20px; line-height: 1; font-family: serif; pointer-events: none; }
+    .si-quote-text { font-size: clamp(18px, 2.5vw, 26px); font-weight: 600; color: #fff; line-height: 1.6; margin-bottom: 24px; position: relative; z-index: 2; }
+    .si-quote-author { display: flex; align-items: center; gap: 16px; position: relative; z-index: 2; }
+    .si-quote-avatar { width: 48px; height: 48px; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .si-quote-author-info .name { font-size: 15px; font-weight: 700; color: #fff; }
+    .si-quote-author-info .role { font-size: 12px; color: rgba(255,255,255,0.7); }
+
+    .acc-cta-strip { background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 50%, #dc2626 100%); border-radius: 24px; padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; position: relative; overflow: hidden; }
+    .acc-cta-strip::before { content: ''; position: absolute; width: 350px; height: 350px; border-radius: 50%; border: 60px solid rgba(255,255,255,0.05); top: -120px; right: -100px; }
+    .acc-cta-strip h2 { font-size: clamp(24px,3vw,36px); font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .acc-cta-strip p { font-size: 16px; color: rgba(255,255,255,0.82); line-height: 1.6; }
+    .acc-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #dc2626; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 10px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: all 0.25s; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .acc-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+    @media (max-width: 900px) {
+      .acc-overview-split, .si-programs-grid { grid-template-columns: 1fr; gap: 24px; }
+      .acc-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .si-journey { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .si-journey::before { display: none; }
+      .acc-cta-strip { flex-direction: column; text-align: center; padding: 40px 24px; }
+      .acc-trust-divider { display: none; }
+    }
+    @media (max-width: 600px) {
+      .acc-benefits-grid { grid-template-columns: 1fr; }
+      .si-journey { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- =========================================================
-     HEADER / NAVIGATION
-======================================================== -->
   <div class="wb-topbar" id="wb-topbar">
     <div class="wb-container">
       <div class="wb-topbar-marquee">
         <div class="wb-topbar-track">
-          <span class="wb-topbar-item">Startup India Recognized | Build Your Entrepreneurial Dreams | <a href="contact.html">Enroll Now →</a></span>
-          <span class="wb-topbar-item">Government-Backed Startup Training & Mentorship | <a href="contact.html">Learn More →</a></span>
-          <span class="wb-topbar-item">Transform Ideas into Scalable Startups with Startup India Support | <a href="contact.html">Join Us →</a></span>
-          <!-- Duplicates for loop -->
-          <span class="wb-topbar-item">Startup India Recognized | Build Your Entrepreneurial Dreams | <a href="contact.html">Enroll Now →</a></span>
-          <span class="wb-topbar-item">Government-Backed Startup Training & Mentorship | <a href="contact.html">Learn More →</a></span>
-          <span class="wb-topbar-item">Transform Ideas into Scalable Startups with Startup India Support | <a href="contact.html">Join Us →</a></span>
+          <span class="wb-topbar-item">Startup India Recognized — Govt. of India Backed Entrepreneurship Programs | <a href="contact.html">Enroll Now →</a></span>
+          <span class="wb-topbar-item">Turn Your Ideas into Real Startups with Expert Mentorship | <a href="contact.html">Learn More →</a></span>
+          <span class="wb-topbar-item">Tax Benefits + Funding Access + Industry Network — Startup India Perks | <a href="contact.html">Join Now →</a></span>
+          <span class="wb-topbar-item">Startup India Recognized — Govt. of India Backed Entrepreneurship Programs | <a href="contact.html">Enroll Now →</a></span>
+          <span class="wb-topbar-item">Turn Your Ideas into Real Startups with Expert Mentorship | <a href="contact.html">Learn More →</a></span>
+          <span class="wb-topbar-item">Tax Benefits + Funding Access + Industry Network — Startup India Perks | <a href="contact.html">Join Now →</a></span>
         </div>
       </div>
     </div>
   </div>
-<header class="wb-header" id="wb-header">
-    <div class="wb-container wb-nav-inner">
-      <!-- Logo -->
-      <a href="index.html" class="wb-logo">
-        <img src="assets/img/logo-main.png" alt="White Banger" class="wb-logo-img">
-      </a>
 
-      <!-- Nav Links -->
+  <header class="wb-header" id="wb-header">
+    <div class="wb-container wb-nav-inner">
+      <a href="index.html" class="wb-logo"><img src="assets/img/logo-main.png" alt="White Banger" class="wb-logo-img"></a>
       <nav class="wb-nav" id="wb-nav">
         <a href="index.html" class="wb-nav-link">Home</a>
         <div class="wb-nav-dropdown">
-          <a href="#" class="wb-nav-link wb-active"><span>About</span> <span
-              class="wb-dropdown-arrow">▼</span></a>
+          <a href="#" class="wb-nav-link wb-active"><span>About</span> <span class="wb-dropdown-arrow">▼</span></a>
           <div class="wb-dropdown-menu">
             <a href="about.html">About White Banger</a>
             <a href="testimonials.html">Testimonials</a>
@@ -75,8 +179,7 @@
           </div>
         </div>
         <div class="wb-nav-dropdown">
-          <a href="index.html#courses" class="wb-nav-link"><span>Courses</span> <span
-              class="wb-dropdown-arrow">▼</span></a>
+          <a href="index.html#courses" class="wb-nav-link"><span>Courses</span> <span class="wb-dropdown-arrow">▼</span></a>
           <div class="wb-dropdown-menu">
             <a href="course.html?id=digital-marketing">Digital Marketing</a>
             <a href="ai-automation.html">AI &amp; Automation</a>
@@ -102,8 +205,7 @@
         </div>
         <a href="industry-experts.html" class="wb-nav-link">Industry Experts</a>
         <div class="wb-nav-dropdown">
-          <a href="testimonials.html" class="wb-nav-link"><span>Student Review</span> <span
-              class="wb-dropdown-arrow">▼</span></a>
+          <a href="testimonials.html" class="wb-nav-link"><span>Student Review</span> <span class="wb-dropdown-arrow">▼</span></a>
           <div class="wb-dropdown-menu">
             <a href="testimonials.html">Testimonials</a>
             <a href="international-placements.html">International Placements</a>
@@ -113,276 +215,255 @@
         </div>
         <a href="contact.html" class="wb-nav-link">Contact</a>
       </nav>
-      <a href="internship.html" class="wb-nav-intern">
-        <span class="wb-nb-icon">&#128188;</span><span class="wb-nb-text"> Internship</span>
-        <span class="intern-live-dot"></span>
-      </a>      <a href="naveen-avsar-yojana.html" class="wb-nav-naisc">
-        <img src="assets/img/naveen-jindal-foundation-logo.png" class="naisc-njf-mini" alt="" onerror="this.style.display='none'">
-        <span class="wb-nb-icon">&#127963;&#65039;</span><span class="wb-nb-text"> Naveen Avsar</span>
-        <span class="naisc-live-dot"></span>
-      </a>
-
-      <!-- CTA -->
+      <a href="internship.html" class="wb-nav-intern"><span class="wb-nb-icon">&#128188;</span><span class="wb-nb-text"> Internship</span><span class="intern-live-dot"></span></a>
+      <a href="naveen-avsar-yojana.html" class="wb-nav-naisc"><img src="assets/img/naveen-jindal-foundation-logo.png" class="naisc-njf-mini" alt="" onerror="this.style.display='none'"><span class="wb-nb-icon">&#127963;&#65039;</span><span class="wb-nb-text"> Naveen Avsar</span><span class="naisc-live-dot"></span></a>
       <a href="//erp.whitebanger.org/login.html" class="wb-btn wb-btn-primary">Login</a>
-
-      <!-- Hamburger -->
-      <button class="wb-hamburger" id="wb-hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="wb-hamburger" id="wb-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-    <!-- =========================================================
-     HERO BANNER
-======================================================== -->
-    <section class="wb-page-hero"
-      style="background-image: url('media__1773120190792.png'); background-position: center right; background-size: cover;">
+
+    <section class="wb-page-hero" style="background-image: url('assets/img/media__1773120190792.png'); background-position: center right; background-size: cover;">
       <div class="wb-container">
-        <div class="wb-hero-inner" style="max-width: 600px;">
+        <div class="wb-hero-inner" style="max-width: 640px;">
           <div class="wb-breadcrumbs">
-            <a href="index.html">Home</a> <span class="wb-bc-sep">|</span> <span
-              class="wb-bc-current">Startup India Recognition</span>
+            <a href="index.html">Home</a> <span class="wb-bc-sep">|</span>
+            <a href="approvals-accreditations.html">Accreditations</a> <span class="wb-bc-sep">|</span>
+            <span class="wb-bc-current">Startup India</span>
           </div>
-          <h1 class="wb-hero-page-title">Startup India Recognition</h1>
+          <div class="acc-hero-badge fade-up-hero"><span class="dot"></span> Govt. of India Recognized</div>
+          <h1 class="wb-hero-page-title fade-up-hero" style="animation-delay:.1s">Startup India<br><span style="color:#dc2626;">Recognition</span></h1>
+          <p class="fade-up-hero" style="font-size:17px;color:#444;line-height:1.7;margin-top:12px;animation-delay:.2s;">White Banger is officially recognized under the Government of India's Startup India initiative — turning ideas into businesses, businesses into impact.</p>
         </div>
       </div>
     </section>
+  </header>
 
-    <!-- =========================================================
-     STARTUP INDIA OVERVIEW
-======================================================== -->
+  <!-- TRUST BAR -->
+  <div class="acc-trust-bar">
+    <div class="wb-container">
+      <div class="acc-trust-inner">
+        <div class="acc-trust-item reveal"><div class="num">1,40,000+</div><div class="label">DPIIT Recognized Startups</div></div>
+        <div class="acc-trust-divider"></div>
+        <div class="acc-trust-item reveal delay-1"><div class="num">3rd</div><div class="label">Largest Startup Ecosystem Globally</div></div>
+        <div class="acc-trust-divider"></div>
+        <div class="acc-trust-item reveal delay-2"><div class="num">₹10,000 Cr</div><div class="label">Startup India Fund of Funds</div></div>
+        <div class="acc-trust-divider"></div>
+        <div class="acc-trust-item reveal delay-3"><div class="num">3 Yrs</div><div class="label">Tax Holiday for DPIIT Startups</div></div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- OVERVIEW -->
     <section class="wb-section wb-mou-grid-section">
       <div class="wb-container">
-        <div style="max-width: 800px; margin: 0 auto;">
-          <h2 class="wb-section-title" style="text-align: center; margin-bottom: 24px; color: #1e3a8a;">Building the Next Generation of Entrepreneurs</h2>
-          <p style="font-size: 16px; line-height: 1.8; color: #4b5563; margin-bottom: 20px;">
-            Startup India is a flagship initiative of the Government of India to foster entrepreneurship and promote startup culture in the nation. White Banger is recognized under this scheme for developing startup-ready professionals and innovators.
-          </p>
-          <p style="font-size: 16px; line-height: 1.8; color: #4b5563; margin-bottom: 20px;">
-            Our Startup India programs equip aspiring entrepreneurs with skills, knowledge, and mentorship needed to launch and scale successful startups in today's digital economy.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-     STARTUP INDIA BENEFITS
-======================================================== -->
-    <section class="wb-section wb-mou-grid-section" style="background-color: #f8fafc;">
-      <div class="wb-container">
-        <h2 class="wb-section-title" style="text-align: center; margin-bottom: 40px; color: #1e3a8a;">Benefits of Startup India Programs</h2>
-        <div class="wb-mou-grid-wrapper">
-          <div class="wb-mou-grid">
-            <!-- Benefit 1 -->
-            <div class="wb-mou-item">
-              <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #1a56db, #0e42a4); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">✓</div>
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Expert Mentorship</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6;">Learn from successful entrepreneurs and industry mentors who guide your startup journey.</p>
+        <div class="acc-overview-split">
+          <div class="si-visual reveal-left">
+            <div class="si-flag-strip">
+              <div class="saffron"></div>
+              <div class="white"></div>
+              <div class="green"></div>
             </div>
-            <!-- Benefit 2 -->
-            <div class="wb-mou-item">
-              <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #1a56db, #0e42a4); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">✓</div>
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Networking Opportunities</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6;">Connect with fellow entrepreneurs, investors, and business leaders for collaborations.</p>
+            <div style="position:relative;z-index:2;">
+              <div style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;">Recognized under</div>
+              <div style="font-size:clamp(22px,4vw,34px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;">DPIIT Startup India<br>Initiative</div>
+              <div style="width:48px;height:3px;background:#fbbf24;border-radius:2px;margin-bottom:20px;"></div>
+              <p style="font-size:14px;color:rgba(255,255,255,0.82);line-height:1.7;position:relative;z-index:2;">Launched in 2016 by the Government of India, Startup India is the world's largest government-backed startup support ecosystem — providing tax benefits, funding access, and mentorship to recognized entities like White Banger.</p>
             </div>
-            <!-- Benefit 3 -->
-            <div class="wb-mou-item">
-              <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #1a56db, #0e42a4); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">✓</div>
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Business Development</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6;">Master business planning, financing, marketing, and scaling strategies for growth.</p>
+            <div class="si-stat-grid">
+              <div class="si-stat-box"><div class="n">2016</div><div class="l">Initiative Launched</div></div>
+              <div class="si-stat-box"><div class="n">DPIIT</div><div class="l">Recognized Entity</div></div>
+              <div class="si-stat-box"><div class="n">3 Yrs</div><div class="l">Tax Benefits</div></div>
+              <div class="si-stat-box"><div class="n">100%</div><div class="l">Govt. Backed</div></div>
             </div>
-            <!-- Benefit 4 -->
-            <div class="wb-mou-item">
-              <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #1a56db, #0e42a4); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">✓</div>
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Government Support</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6;">Access government schemes, tax benefits, and recognition under Startup India initiative.</p>
+            <div class="acc-big-label">STARTUP</div>
+          </div>
+          <div class="acc-overview-content reveal-right">
+            <span class="wb-pill-badge">About the Initiative</span>
+            <h2>Why <span>Startup India</span> Recognition Changes Everything</h2>
+            <p>When the Government of India recognizes a company under Startup India, it's a seal of legitimacy and opportunity. It means tax exemptions, access to the ₹10,000 crore Fund of Funds, fast-track patent applications, and direct participation in government procurement programs.</p>
+            <p>For White Banger students, our recognition means you can leverage our status to validate your own ventures — and you'll learn from an institution that has walked the entrepreneurship path itself.</p>
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px;">
+              <div class="wb-why-card reveal">
+                <div class="wb-why-icon">🇮🇳</div>
+                <div><h4>Government-Backed Credibility</h4><p>Our DPIIT recognition is a mark of trust — students know they're learning from a vetted, legitimate institution.</p></div>
+              </div>
+              <div class="wb-why-card reveal delay-1">
+                <div class="wb-why-icon">💡</div>
+                <div><h4>Entrepreneurship by Example</h4><p>We don't just teach entrepreneurship — we practice it. Our startup experience becomes your practical curriculum.</p></div>
+              </div>
+              <div class="wb-why-card reveal delay-2">
+                <div class="wb-why-icon">🤝</div>
+                <div><h4>Investor & Mentor Network</h4><p>Access our network of angel investors, VCs, and startup mentors built through the Startup India ecosystem.</p></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-     OUR STARTUP PROGRAMS
-======================================================== -->
+    <!-- STARTUP JOURNEY -->
+    <section class="wb-section wb-mou-grid-section" style="background:#f8fafc;">
+      <div class="wb-container">
+        <div style="text-align:center;margin-bottom:56px;" class="reveal">
+          <span class="wb-pill-badge">Your Journey</span>
+          <h2 class="wb-section-title" style="color:#1e3a8a;margin-top:12px;">From Idea to Funded Startup<br>in 4 Steps</h2>
+        </div>
+        <div class="si-journey">
+          <div class="si-step reveal">
+            <div class="si-step-circle" style="background:linear-gradient(135deg,#fef3c7,#fbbf24);">💡</div>
+            <h4>Ideation</h4>
+            <p>Identify problems, validate ideas, and build your unique value proposition through structured workshops.</p>
+          </div>
+          <div class="si-step reveal delay-1">
+            <div class="si-step-circle" style="background:linear-gradient(135deg,#fee2e2,#dc2626);">🔨</div>
+            <h4>Build MVP</h4>
+            <p>Develop your Minimum Viable Product using digital tools — with real technical and business mentorship.</p>
+          </div>
+          <div class="si-step reveal delay-2">
+            <div class="si-step-circle" style="background:linear-gradient(135deg,#dbeafe,#1a56db);">🚀</div>
+            <h4>Launch &amp; Validate</h4>
+            <p>Take your product to market, acquire your first customers, and iterate based on real feedback.</p>
+          </div>
+          <div class="si-step reveal delay-3">
+            <div class="si-step-circle" style="background:linear-gradient(135deg,#d1fae5,#047857);">📈</div>
+            <h4>Scale &amp; Fund</h4>
+            <p>Access funding through Startup India schemes, pitch to investors, and scale your venture nationally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
     <section class="wb-section wb-mou-grid-section">
       <div class="wb-container">
-        <h2 class="wb-section-title" style="text-align: center; margin-bottom: 40px; color: #1e3a8a;">Startup India Programs at White Banger</h2>
-        <div class="wb-mou-grid-wrapper">
-          <div class="wb-mou-grid">
-            <!-- Program 1 -->
-            <div class="wb-mou-item">
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Entrepreneurship Bootcamp</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6; margin-top: 12px;">Intensive training covering business fundamentals, market research, and startup ideation.</p>
-            </div>
-            <!-- Program 2 -->
-            <div class="wb-mou-item">
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Business Model Innovation</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6; margin-top: 12px;">Design thinking and lean methodologies to validate and scale your business ideas.</p>
-            </div>
-            <!-- Program 3 -->
-            <div class="wb-mou-item">
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Digital Marketing for Startups</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6; margin-top: 12px;">Cost-effective marketing strategies to launch and grow your startup online.</p>
-            </div>
-            <!-- Program 4 -->
-            <div class="wb-mou-item">
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Fundraising & Finance</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6; margin-top: 12px;">Learn financial management, investor pitching, and access to startup funding options.</p>
+        <div style="text-align:center;margin-bottom:48px;" class="reveal">
+          <span class="wb-pill-badge">Programs</span>
+          <h2 class="wb-section-title" style="color:#1e3a8a;margin-top:12px;">Startup India Programs<br>at White Banger</h2>
+        </div>
+        <div class="si-programs-grid">
+          <div class="si-program-card reveal">
+            <div class="si-program-icon" style="background:#fef9c3;">🎯</div>
+            <h4>Entrepreneurship Bootcamp</h4>
+            <p>Intensive 4-week bootcamp covering business fundamentals, market research, competitive analysis, and lean startup methodology with real case studies.</p>
+            <span class="si-program-tag" style="background:#fef3c7;color:#92400e;">4 Weeks</span>
+          </div>
+          <div class="si-program-card reveal delay-1">
+            <div class="si-program-icon" style="background:#eff6ff;">📱</div>
+            <h4>Digital Startup Accelerator</h4>
+            <p>Build your digital product from scratch — web/app development, digital marketing, SEO, and growth hacking strategies used by India's top startups.</p>
+            <span class="si-program-tag" style="background:#eff6ff;color:#1e3a8a;">8 Weeks</span>
+          </div>
+          <div class="si-program-card reveal delay-2">
+            <div class="si-program-icon" style="background:#f0fdf4;">💰</div>
+            <h4>Startup Finance &amp; Funding</h4>
+            <p>Financial modeling, cap table management, pitch deck creation, and how to approach angel investors, VCs, and government funding schemes.</p>
+            <span class="si-program-tag" style="background:#f0fdf4;color:#166534;">3 Weeks</span>
+          </div>
+          <div class="si-program-card reveal delay-3">
+            <div class="si-program-icon" style="background:#fee2e2;">🏛️</div>
+            <h4>Legal &amp; Compliance for Startups</h4>
+            <p>Company incorporation, IP protection, contracts, GST registration, and DPIIT startup certification process — the legal backbone of every startup.</p>
+            <span class="si-program-tag" style="background:#fee2e2;color:#991b1b;">2 Weeks</span>
+          </div>
+          <div class="si-program-card reveal delay-1">
+            <div class="si-program-icon" style="background:#f5f3ff;">🤝</div>
+            <h4>Mentor Connect Program</h4>
+            <p>1-on-1 sessions with successful startup founders, CXOs, and investors from White Banger's exclusive mentor network built through the Startup India ecosystem.</p>
+            <span class="si-program-tag" style="background:#f5f3ff;color:#5b21b6;">Ongoing</span>
+          </div>
+          <div class="si-program-card reveal delay-2">
+            <div class="si-program-icon" style="background:#fff7ed;">🌐</div>
+            <h4>Go-To-Market Strategy</h4>
+            <p>Product launch playbooks, customer acquisition frameworks, brand building, and PR strategies to take your startup from zero to market leader.</p>
+            <span class="si-program-tag" style="background:#fff7ed;color:#9a3412;">3 Weeks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="wb-section wb-mou-grid-section" style="background:#f8fafc;">
+      <div class="wb-container">
+        <div class="si-quote-section reveal">
+          <p class="si-quote-text">"India is home to the world's 3rd largest startup ecosystem — and every great startup starts with great skills. At White Banger, we don't just prepare you to work in startups. We prepare you to build them."</p>
+          <div class="si-quote-author">
+            <div class="si-quote-avatar">🎓</div>
+            <div class="si-quote-author-info">
+              <div class="name">White Banger Academy</div>
+              <div class="role">DPIIT Startup India Recognized Institution</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-     CTA SECTION
-======================================================== -->
-    <section class="wb-section" style="background: linear-gradient(135deg, #1a56db, #0e42a4); color: white;">
+    <!-- BENEFITS -->
+    <section class="wb-section wb-mou-grid-section">
       <div class="wb-container">
-        <div style="text-align: center;">
-          <h2 class="wb-section-title" style="color: white; margin-bottom: 16px;">Launch Your Startup Journey Today</h2>
-          <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px; opacity: 0.9;">Join White Banger's Startup India programs and turn your entrepreneurial dreams into reality.</p>
-          <a href="contact.html" class="wb-btn wb-btn-primary" style="background: white; color: #1a56db;">Enroll Now</a>
+        <div style="text-align:center;margin-bottom:48px;" class="reveal">
+          <span class="wb-pill-badge">Key Benefits</span>
+          <h2 class="wb-section-title" style="color:#1e3a8a;margin-top:12px;">What Startup India<br>Recognition Gives You</h2>
+        </div>
+        <div class="acc-benefits-grid">
+          <div class="acc-benefit-card reveal">
+            <div class="acc-benefit-icon" style="background:#fee2e2;">🛡️</div>
+            <h4>Tax Holiday (3 Years)</h4>
+            <p>DPIIT-recognized startups get 3 years of income tax exemption — keep more of what you earn early on.</p>
+          </div>
+          <div class="acc-benefit-card reveal delay-1">
+            <div class="acc-benefit-icon" style="background:#fef9c3;">📋</div>
+            <h4>Fast-Track Patents</h4>
+            <p>80% rebate on patent fees and fast-track examination — protect your innovations quickly and affordably.</p>
+          </div>
+          <div class="acc-benefit-card reveal delay-2">
+            <div class="acc-benefit-icon" style="background:#eff6ff;">🏦</div>
+            <h4>Funding Access</h4>
+            <p>Direct access to the ₹10,000 crore Fund of Funds and government credit guarantee programs.</p>
+          </div>
+          <div class="acc-benefit-card reveal delay-3">
+            <div class="acc-benefit-icon" style="background:#f0fdf4;">🤝</div>
+            <h4>Government Procurement</h4>
+            <p>Registered startups can directly sell to government departments without complex tendering requirements.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-     FOOTER
-======================================================== -->
+    <!-- CTA -->
+    <section class="wb-section wb-mou-grid-section">
+      <div class="wb-container">
+        <div class="acc-cta-strip reveal">
+          <div>
+            <h2>Launch Your Startup Journey Today</h2>
+            <p>Join White Banger's Startup India programs and build the skills, network, and confidence to turn your entrepreneurial dreams into reality.</p>
+          </div>
+          <a href="contact.html" class="acc-cta-btn">
+            Enroll Now
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="wb-footer">
     <div class="wb-container">
       <div class="wb-footer-top">
-        <!-- Logo & Info -->
-        <div class="wb-footer-col wb-footer-brand">
-          <a href="index.html" class="wb-logo">
-            <img src="assets/img/logo-main.png" alt="White Banger" class="wb-logo-img">
-          </a>
-          <address class="wb-footer-contact">
-            <div class="wb-footer-contact-item">
-              <span class="wb-fc-icon-wrap wb-fc-whatsapp">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
-                </svg>
-              </span>
-              <div class="wb-fc-text">
-                <small>WhatsApp</small>
-                <strong>+91 97283-20132</strong>
-              </div>
-            </div>
-            <div class="wb-footer-contact-item">
-              <span class="wb-fc-icon-wrap wb-fc-email">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" />
-                </svg>
-              </span>
-              <div class="wb-fc-text">
-                <small>Email</small>
-                <strong>prikshit@whitebanger.org</strong>
-              </div>
-            </div>
-          </address>
-        </div>
-        <!-- About WB -->
-        <div class="wb-footer-col">
-          <h5 class="wb-footer-heading">About WB</h5>
-          <ul class="wb-footer-links">
-            <li><a href="about.html">About us</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
-            <li><a href="mous-collaboration.html">MOUs and Collaborations</a></li>
-            <li><a href="approvals-accreditations.html">Approvals and Accreditations</a></li>
-          </ul>
-        </div>
-        <!-- Student Zone -->
-        <div class="wb-footer-col">
-          <h5 class="wb-footer-heading">Student Zone</h5>
-          <ul class="wb-footer-links">
-            <li><a href="exam-schedule.html">Exam Schedule</a></li>
-            <li><a href="exam-result.html">Results</a></li>
-            <li><a href="online-payment.html">Online Payment</a></li>
-            <li><a href="admission-form.html">Admission Form</a></li>
-          </ul>
-        </div>
-        <!-- Connect with us & Social -->
-        <div class="wb-footer-col">
-          <h5 class="wb-footer-heading">Connect with us</h5>
-          <div class="wb-social-links wb-social-blue">
-            <a href="#" class="wb-social-icon" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-              </svg>
-            </a>
-            <a href="#" class="wb-social-icon" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-              </svg>
-            </a>
-            <a href="#" class="wb-social-icon" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
-              </svg>
-            </a>
-            <a href="#" class="wb-social-icon" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="4" ry="4" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
-          </div>
-          <!-- App badges -->
-          <div class="wb-app-badges wb-app-badges-column">
-            <a href="#" class="wb-app-badge"><img src="assets/img/google-play-badge.png" alt="Get it on Google Play"></a>
-            <a href="#" class="wb-app-badge"><img src="assets/img/app-store-badge.png" alt="Download on the App Store"></a>
-          </div>
-        </div>
+        <div class="wb-footer-col wb-footer-brand"><a href="index.html" class="wb-logo"><img src="assets/img/logo-main.png" alt="White Banger" class="wb-logo-img"></a><address class="wb-footer-contact"><div class="wb-footer-contact-item"><span class="wb-fc-icon-wrap wb-fc-whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg></span><div class="wb-fc-text"><small>WhatsApp</small><strong>+91 97283-20132</strong></div></div><div class="wb-footer-contact-item"><span class="wb-fc-icon-wrap wb-fc-email"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/></svg></span><div class="wb-fc-text"><small>Email</small><strong>prikshit@whitebanger.org</strong></div></div></address></div>
+        <div class="wb-footer-col"><h5 class="wb-footer-heading">About WB</h5><ul class="wb-footer-links"><li><a href="about.html">About us</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="mous-collaboration.html">MOUs and Collaborations</a></li><li><a href="approvals-accreditations.html">Approvals and Accreditations</a></li></ul></div>
+        <div class="wb-footer-col"><h5 class="wb-footer-heading">Student Zone</h5><ul class="wb-footer-links"><li><a href="exam-schedule.html">Exam Schedule</a></li><li><a href="exam-result.html">Results</a></li><li><a href="online-payment.html">Online Payment</a></li><li><a href="admission-form.html">Admission Form</a></li></ul></div>
+        <div class="wb-footer-col"><h5 class="wb-footer-heading">Connect with us</h5><div class="wb-social-links wb-social-blue"><a href="#" class="wb-social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a><a href="#" class="wb-social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="4" ry="4"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none"/></svg></a><a href="#" class="wb-social-icon" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a></div><div class="wb-app-badges wb-app-badges-column"><a href="#" class="wb-app-badge"><img src="assets/img/google-play-badge.png" alt="Get it on Google Play"></a><a href="#" class="wb-app-badge"><img src="assets/img/app-store-badge.png" alt="Download on the App Store"></a></div></div>
       </div>
-      <!-- Footer Bottom -->
-      <div class="wb-footer-bottom">
-        <div class="wb-footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Sitemap</a>
-        </div>
-        <p class="wb-footer-copy">Copyright &copy; 2026 White Banger | Powered by White Banger Tech Private Limited</p>
-      </div>
+      <div class="wb-footer-bottom"><div class="wb-footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div><p class="wb-footer-copy">Copyright &copy; 2026 White Banger | Powered by White Banger Tech Private Limited</p></div>
     </div>
   </footer>
 
-  <!-- Floating Buttons & Popups -->
   <aside aria-label="Floating Actions" class="wb-floating-buttons">
-    <!-- Call Popup -->
-    <div class="wb-fab-popup" id="wbPopupCall">
-      <div class="wb-popup-header">
-        <span class="wb-popup-title">Call Us Directly</span>
-        <button class="wb-popup-close" id="wbCloseCall">&times;</button>
-      </div>
-      <div class="wb-popup-body">
-         <p>Please note that our phone lines are open from <strong>9:00 AM to 5:00 PM</strong>, Monday to Saturday.</p>
-         <a href="tel:+919728320132" class="wb-btn wb-btn-primary wb-btn-full">Call Now</a>
-      </div>
-    </div>
-
-    <!-- WhatsApp Popup -->
-    <div class="wb-fab-popup" id="wbPopupWhatsapp">
-      <div class="wb-popup-header wb-whatsapp-header">
-        <img src="assets/img/inquiry-modal-bg.png" alt="Support" class="wb-wa-avatar">
-        <div class="wb-wa-info">
-          <span class="wb-wa-title">Chat with us</span>
-          <span class="wb-wa-status">We reply within 10-20 minutes</span>
-        </div>
-        <button class="wb-popup-close" id="wbCloseWhatsapp">&times;</button>
-      </div>
-      <div class="wb-popup-body">
-        <p>Our WhatsApp support is available <strong>24/7</strong> for any inquiries.</p>
-        <a href="https://wa.me/919728320132" target="_blank" class="wb-btn wb-btn-whatsapp wb-btn-full">Start Chat</a>
-      </div>
-    </div>
+    <div class="wb-fab-popup" id="wbPopupCall"><div class="wb-popup-header"><span class="wb-popup-title">Call Us Directly</span><button class="wb-popup-close" id="wbCloseCall">&times;</button></div><div class="wb-popup-body"><p>Phone lines open <strong>9:00 AM – 5:00 PM</strong>, Mon–Sat.</p><a href="tel:+919728320132" class="wb-btn wb-btn-primary wb-btn-full">Call Now</a></div></div>
+    <div class="wb-fab-popup" id="wbPopupWhatsapp"><div class="wb-popup-header wb-whatsapp-header"><img src="assets/img/inquiry-modal-bg.png" alt="Support" class="wb-wa-avatar"><div class="wb-wa-info"><span class="wb-wa-title">Chat with us</span><span class="wb-wa-status">We reply within 10-20 minutes</span></div><button class="wb-popup-close" id="wbCloseWhatsapp">&times;</button></div><div class="wb-popup-body"><p>WhatsApp support available <strong>24/7</strong>.</p><a href="https://wa.me/919728320132" target="_blank" class="wb-btn wb-btn-whatsapp wb-btn-full">Start Chat</a></div></div>
   </aside>
 
   <script src="assets/js/wb-script.min.js"></script>
-
-  <!-- Firebase Database Integration -->
   <script type="module" src="assets/js/wb-database.js"></script>
 </body>
-
 </html>

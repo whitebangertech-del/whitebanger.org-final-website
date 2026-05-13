@@ -5,66 +5,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NASSCOM Accreditation | White Banger</title>
-  <meta name="description" content="White Banger is a NASSCOM member institution, recognized for excellence in IT and digital skill development. Explore our NASSCOM accreditation and industry alignment." />
+  <meta name="description" content="White Banger is NASSCOM accredited — delivering industry-aligned IT and digital skill training recognized globally by top tech companies." />
   <link rel="canonical" href="https://whitebanger.org/nasscom-accreditation.html" />
-
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://whitebanger.org/nasscom-accreditation.html" />
   <meta property="og:title" content="NASSCOM Accreditation | White Banger" />
   <meta property="og:description" content="White Banger's NASSCOM accreditation demonstrates commitment to industry-standard IT skill training." />
   <meta property="og:image" content="https://whitebanger.org/assets/img/logo-main.png" />
-
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://whitebanger.org/nasscom-accreditation.html" />
-  <meta property="twitter:title" content="NASSCOM Accreditation | White Banger" />
-  <meta property="twitter:description" content="White Banger's NASSCOM accreditation demonstrates commitment to industry-standard IT skill training." />
   <meta property="twitter:image" content="https://whitebanger.org/assets/img/logo-main.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/wb-style.min.css" />
   <link rel="stylesheet" href="assets/css/animations.css" />
   <link rel="stylesheet" href="assets/css/naisc-nav.css" />
   <link rel="stylesheet" href="assets/css/wb-header-v2.css" />
+
+  <style>
+    /* ── Accreditation page shared styles ── */
+    .acc-hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(8px); border-radius: 999px;
+      padding: 6px 16px; font-size: 12px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: #fff; margin-bottom: 20px;
+    }
+    .acc-hero-badge .dot { width: 8px; height: 8px; background: #ffc107; border-radius: 50%; animation: pulse-dot 1.8s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:.7} }
+
+    .acc-overview-split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .acc-overview-visual {
+      position: relative; border-radius: 20px; overflow: hidden;
+      background: linear-gradient(135deg, #0052cc 0%, #1a56db 50%, #0ea5e9 100%);
+      padding: 48px 40px; color: #fff;
+    }
+    .acc-overview-visual::before {
+      content: ''; position: absolute; width: 280px; height: 280px;
+      border-radius: 50%; border: 50px solid rgba(255,255,255,0.06);
+      top: -80px; right: -80px; pointer-events: none;
+    }
+    .acc-overview-visual::after {
+      content: ''; position: absolute; width: 180px; height: 180px;
+      border-radius: 50%; border: 30px solid rgba(255,255,255,0.04);
+      bottom: -40px; left: -40px; pointer-events: none;
+    }
+    .acc-big-label {
+      font-size: clamp(56px, 8vw, 96px); font-weight: 900;
+      letter-spacing: -.04em; line-height: 1;
+      color: rgba(255,255,255,0.15); position: absolute;
+      bottom: 16px; right: 24px; pointer-events: none; user-select: none;
+    }
+    .acc-stat-row { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+    .acc-stat-pill {
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(6px); border-radius: 12px;
+      padding: 14px 20px; flex: 1; min-width: 100px;
+    }
+    .acc-stat-pill-num { font-size: 26px; font-weight: 800; color: #ffc107; line-height: 1; }
+    .acc-stat-pill-label { font-size: 11px; color: rgba(255,255,255,0.75); margin-top: 4px; line-height: 1.4; }
+    .acc-overview-content { position: relative; z-index: 2; }
+    .acc-overview-content .wb-pill-badge {
+      display: inline-block; padding: 6px 16px; border: 1px solid #e0e0e0;
+      border-radius: 20px; font-size: 11px; text-transform: uppercase;
+      letter-spacing: 1px; color: #666; margin-bottom: 20px;
+    }
+    .acc-overview-content h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: #111; line-height: 1.2; margin-bottom: 20px; letter-spacing: -.02em; }
+    .acc-overview-content h2 span { color: #1a56db; }
+    .acc-overview-content p { font-size: 16px; line-height: 1.8; color: #4b5563; margin-bottom: 16px; }
+
+    .acc-benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .acc-benefit-card {
+      background: #fff; border: 1px solid #e5e7eb; border-radius: 16px;
+      padding: 28px 24px; text-align: center;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .acc-benefit-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,86,219,0.12); border-color: #93c5fd; }
+    .acc-benefit-icon {
+      width: 64px; height: 64px; margin: 0 auto 16px;
+      border-radius: 16px; display: flex; align-items: center; justify-content: center;
+      font-size: 30px; transition: transform 0.3s;
+    }
+    .acc-benefit-card:hover .acc-benefit-icon { transform: scale(1.1) rotate(-5deg); }
+    .acc-benefit-card h4 { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 10px; }
+    .acc-benefit-card p { font-size: 13px; color: #6b7280; line-height: 1.65; }
+
+    .acc-programs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .acc-program-card {
+      display: flex; gap: 20px; align-items: flex-start;
+      background: #fafafa; border: 1px solid #e5e7eb; border-radius: 14px;
+      padding: 24px; transition: all 0.25s;
+    }
+    .acc-program-card:hover { background: #eff6ff; border-color: #93c5fd; transform: translateX(4px); }
+    .acc-program-num {
+      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, #1a56db, #0ea5e9);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 800; color: #fff;
+    }
+    .acc-program-card h4 { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 6px; }
+    .acc-program-card p { font-size: 13px; color: #6b7280; line-height: 1.6; }
+
+    .acc-cta-strip {
+      background: linear-gradient(135deg, #1a56db 0%, #0052cc 50%, #0ea5e9 100%);
+      border-radius: 24px; padding: 56px 48px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      position: relative; overflow: hidden;
+    }
+    .acc-cta-strip::before {
+      content: ''; position: absolute; width: 350px; height: 350px;
+      border-radius: 50%; border: 60px solid rgba(255,255,255,0.05);
+      top: -120px; right: -100px;
+    }
+    .acc-cta-strip h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .acc-cta-strip p { font-size: 16px; color: rgba(255,255,255,0.82); line-height: 1.6; }
+    .acc-cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: #1a56db; font-weight: 700; font-size: 15px;
+      padding: 14px 32px; border-radius: 10px; text-decoration: none;
+      white-space: nowrap; flex-shrink: 0;
+      transition: all 0.25s; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .acc-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+    .acc-trust-bar {
+      background: #f8fafc; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;
+      padding: 32px 0;
+    }
+    .acc-trust-inner { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .acc-trust-item { text-align: center; }
+    .acc-trust-item .num { font-size: 32px; font-weight: 900; color: #1a56db; line-height: 1; }
+    .acc-trust-item .label { font-size: 12px; color: #6b7280; font-weight: 500; margin-top: 4px; }
+    .acc-trust-divider { width: 1px; height: 40px; background: #e5e7eb; }
+
+    @media (max-width: 900px) {
+      .acc-overview-split { grid-template-columns: 1fr; gap: 32px; }
+      .acc-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .acc-programs-grid { grid-template-columns: 1fr; }
+      .acc-cta-strip { flex-direction: column; text-align: center; padding: 40px 24px; }
+      .acc-trust-divider { display: none; }
+    }
+    @media (max-width: 600px) {
+      .acc-benefits-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- =========================================================
-     HEADER / NAVIGATION
-======================================================== -->
   <div class="wb-topbar" id="wb-topbar">
     <div class="wb-container">
       <div class="wb-topbar-marquee">
         <div class="wb-topbar-track">
-          <span class="wb-topbar-item">NASSCOM Accredited | Delivering Industry-Ready IT & Digital Skills | <a href="contact.html">Enroll Now →</a></span>
-          <span class="wb-topbar-item">Aligned with NASSCOM Standards for Quality IT Education | <a href="contact.html">Learn More →</a></span>
-          <span class="wb-topbar-item">Building India's Digital Workforce with NASSCOM Recognition | <a href="contact.html">Join Us →</a></span>
-          <!-- Duplicates for loop -->
-          <span class="wb-topbar-item">NASSCOM Accredited | Delivering Industry-Ready IT & Digital Skills | <a href="contact.html">Enroll Now →</a></span>
-          <span class="wb-topbar-item">Aligned with NASSCOM Standards for Quality IT Education | <a href="contact.html">Learn More →</a></span>
-          <span class="wb-topbar-item">Building India's Digital Workforce with NASSCOM Recognition | <a href="contact.html">Join Us →</a></span>
+          <span class="wb-topbar-item">NASSCOM Accredited — India's Premier IT Industry Body Recognition | <a href="contact.html">Enroll Now →</a></span>
+          <span class="wb-topbar-item">Aligned with NASSCOM Standards | Industry-Ready Digital Skills | <a href="contact.html">Learn More →</a></span>
+          <span class="wb-topbar-item">NASSCOM Certified Faculty | Real Projects | Placement Support | <a href="contact.html">Join Now →</a></span>
+          <span class="wb-topbar-item">NASSCOM Accredited — India's Premier IT Industry Body Recognition | <a href="contact.html">Enroll Now →</a></span>
+          <span class="wb-topbar-item">Aligned with NASSCOM Standards | Industry-Ready Digital Skills | <a href="contact.html">Learn More →</a></span>
+          <span class="wb-topbar-item">NASSCOM Certified Faculty | Real Projects | Placement Support | <a href="contact.html">Join Now →</a></span>
         </div>
       </div>
     </div>
   </div>
-<header class="wb-header" id="wb-header">
+
+  <header class="wb-header" id="wb-header">
     <div class="wb-container wb-nav-inner">
-      <!-- Logo -->
       <a href="index.html" class="wb-logo">
         <img src="assets/img/logo-main.png" alt="White Banger" class="wb-logo-img">
       </a>
-
-      <!-- Nav Links -->
       <nav class="wb-nav" id="wb-nav">
         <a href="index.html" class="wb-nav-link">Home</a>
         <div class="wb-nav-dropdown">
-          <a href="#" class="wb-nav-link wb-active"><span>About</span> <span
-              class="wb-dropdown-arrow">▼</span></a>
+          <a href="#" class="wb-nav-link wb-active"><span>About</span> <span class="wb-dropdown-arrow">▼</span></a>
           <div class="wb-dropdown-menu">
             <a href="about.html">About White Banger</a>
             <a href="testimonials.html">Testimonials</a>
@@ -75,8 +190,7 @@
           </div>
         </div>
         <div class="wb-nav-dropdown">
-          <a href="index.html#courses" class="wb-nav-link"><span>Courses</span> <span
-              class="wb-dropdown-arrow">▼</span></a>
+          <a href="index.html#courses" class="wb-nav-link"><span>Courses</span> <span class="wb-dropdown-arrow">▼</span></a>
           <div class="wb-dropdown-menu">
             <a href="course.html?id=digital-marketing">Digital Marketing</a>
             <a href="ai-automation.html">AI &amp; Automation</a>
@@ -102,8 +216,7 @@
         </div>
         <a href="industry-experts.html" class="wb-nav-link">Industry Experts</a>
         <div class="wb-nav-dropdown">
-          <a href="testimonials.html" class="wb-nav-link"><span>Student Review</span> <span
-              class="wb-dropdown-arrow">▼</span></a>
+          <a href="testimonials.html" class="wb-nav-link"><span>Student Review</span> <span class="wb-dropdown-arrow">▼</span></a>
           <div class="wb-dropdown-menu">
             <a href="testimonials.html">Testimonials</a>
             <a href="international-placements.html">International Placements</a>
@@ -116,173 +229,213 @@
       <a href="internship.html" class="wb-nav-intern">
         <span class="wb-nb-icon">&#128188;</span><span class="wb-nb-text"> Internship</span>
         <span class="intern-live-dot"></span>
-      </a>      <a href="naveen-avsar-yojana.html" class="wb-nav-naisc">
+      </a>
+      <a href="naveen-avsar-yojana.html" class="wb-nav-naisc">
         <img src="assets/img/naveen-jindal-foundation-logo.png" class="naisc-njf-mini" alt="" onerror="this.style.display='none'">
         <span class="wb-nb-icon">&#127963;&#65039;</span><span class="wb-nb-text"> Naveen Avsar</span>
         <span class="naisc-live-dot"></span>
       </a>
-
-      <!-- CTA -->
       <a href="//erp.whitebanger.org/login.html" class="wb-btn wb-btn-primary">Login</a>
-
-      <!-- Hamburger -->
       <button class="wb-hamburger" id="wb-hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- =========================================================
-     HERO BANNER
-======================================================== -->
-    <section class="wb-page-hero"
-      style="background-image: url('media__1773120190792.png'); background-position: center right; background-size: cover;">
+
+    <!-- HERO -->
+    <section class="wb-page-hero" style="background-image: url('assets/img/media__1773120190792.png'); background-position: center right; background-size: cover;">
       <div class="wb-container">
-        <div class="wb-hero-inner" style="max-width: 600px;">
+        <div class="wb-hero-inner" style="max-width: 620px;">
           <div class="wb-breadcrumbs">
-            <a href="index.html">Home</a> <span class="wb-bc-sep">|</span> <span
-              class="wb-bc-current">NASSCOM Accreditation</span>
+            <a href="index.html">Home</a> <span class="wb-bc-sep">|</span>
+            <a href="approvals-accreditations.html">Accreditations</a> <span class="wb-bc-sep">|</span>
+            <span class="wb-bc-current">NASSCOM</span>
           </div>
-          <h1 class="wb-hero-page-title">NASSCOM Accreditation</h1>
+          <div class="acc-hero-badge fade-up-hero"><span class="dot"></span> Official Accreditation</div>
+          <h1 class="wb-hero-page-title fade-up-hero" style="animation-delay:.1s">NASSCOM<br><span style="color:#1a56db;">Accreditation</span></h1>
+          <p class="fade-up-hero" style="font-size:17px;color:#444;line-height:1.7;margin-top:12px;animation-delay:.2s;">India's apex IT industry body recognition — validating our commitment to world-class digital skill training.</p>
         </div>
       </div>
     </section>
+  </header>
 
-    <!-- =========================================================
-     NASSCOM OVERVIEW
-======================================================== -->
+  <!-- ── TRUST BAR ── -->
+  <div class="acc-trust-bar">
+    <div class="wb-container">
+      <div class="acc-trust-inner">
+        <div class="acc-trust-item reveal"><div class="num">2,000+</div><div class="label">NASSCOM Member Companies</div></div>
+        <div class="acc-trust-divider"></div>
+        <div class="acc-trust-item reveal delay-1"><div class="num">5M+</div><div class="label">IT Professionals Trained Nationally</div></div>
+        <div class="acc-trust-divider"></div>
+        <div class="acc-trust-item reveal delay-2"><div class="num">38+</div><div class="label">Countries Recognize NASSCOM Credentials</div></div>
+        <div class="acc-trust-divider"></div>
+        <div class="acc-trust-item reveal delay-3"><div class="num">100%</div><div class="label">Industry-Aligned Curriculum</div></div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ── OVERVIEW SPLIT ── -->
     <section class="wb-section wb-mou-grid-section">
       <div class="wb-container">
-        <div style="max-width: 800px; margin: 0 auto;">
-          <h2 class="wb-section-title" style="text-align: center; margin-bottom: 24px; color: #1e3a8a;">What is NASSCOM?</h2>
-          <p style="font-size: 16px; line-height: 1.8; color: #4b5563; margin-bottom: 20px;">
-            NASSCOM (National Association of Software and Service Companies) is the apex body of the Indian IT industry. It represents over 2,000 companies and is recognized globally as a standard-bearer for IT education and professional development.
-          </p>
-          <p style="font-size: 16px; line-height: 1.8; color: #4b5563; margin-bottom: 20px;">
-            White Banger's NASSCOM accreditation affirms our commitment to delivering industry-aligned IT and digital skill training that meets international quality standards.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-     BENEFITS OF NASSCOM ACCREDITATION
-======================================================== -->
-    <section class="wb-section wb-mou-grid-section" style="background-color: #f8fafc;">
-      <div class="wb-container">
-        <h2 class="wb-section-title" style="text-align: center; margin-bottom: 40px; color: #1e3a8a;">Benefits of NASSCOM Accreditation</h2>
-        <div class="wb-mou-grid-wrapper">
-          <div class="wb-mou-grid">
-            <!-- Benefit 1 -->
-            <div class="wb-mou-item">
-              <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #1a56db, #0e42a4); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">✓</div>
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Industry Standards</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6;">Curriculum aligned with NASSCOM's guidelines ensures relevance to industry needs.</p>
+        <div class="acc-overview-split">
+          <div class="acc-overview-visual reveal-left">
+            <div style="position:relative;z-index:2;">
+              <div style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;">Recognized by</div>
+              <div style="font-size:clamp(32px,5vw,52px);font-weight:900;color:#fff;line-height:1;letter-spacing:-.02em;margin-bottom:4px;">NASSCOM</div>
+              <div style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5;margin-bottom:28px;">National Association of Software<br>and Service Companies</div>
+              <div style="width:48px;height:3px;background:#ffc107;border-radius:2px;margin-bottom:28px;"></div>
+              <p style="font-size:14px;color:rgba(255,255,255,0.82);line-height:1.7;">White Banger's NASSCOM accreditation validates our IT training programs against the same standards used by India's top tech companies — from TCS to Infosys.</p>
             </div>
-            <!-- Benefit 2 -->
-            <div class="wb-mou-item">
-              <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #1a56db, #0e42a4); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">✓</div>
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Global Recognition</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6;">NASSCOM credentials are recognized internationally by IT companies and employers.</p>
+            <div class="acc-stat-row">
+              <div class="acc-stat-pill"><div class="acc-stat-pill-num">ISO</div><div class="acc-stat-pill-label">Dual Certified</div></div>
+              <div class="acc-stat-pill"><div class="acc-stat-pill-num">2006</div><div class="acc-stat-pill-label">NASSCOM Est.</div></div>
+              <div class="acc-stat-pill"><div class="acc-stat-pill-num">#1</div><div class="acc-stat-pill-label">IT Body India</div></div>
             </div>
-            <!-- Benefit 3 -->
-            <div class="wb-mou-item">
-              <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #1a56db, #0e42a4); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">✓</div>
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Career Advancement</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6;">NASSCOM accreditation enhances employability and career prospects significantly.</p>
-            </div>
-            <!-- Benefit 4 -->
-            <div class="wb-mou-item">
-              <div style="width: 60px; height: 60px; margin: 0 auto 16px; background: linear-gradient(135deg, #1a56db, #0e42a4); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px;">✓</div>
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Quality Assurance</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6;">Regular audits ensure consistent quality and excellence in training delivery.</p>
+            <div class="acc-big-label">IT</div>
+          </div>
+          <div class="acc-overview-content reveal-right">
+            <span class="wb-pill-badge">About NASSCOM</span>
+            <h2>Why <span>NASSCOM</span> Sets the Gold Standard for IT Education</h2>
+            <p>NASSCOM (National Association of Software and Service Companies) represents over 2,000 companies and shapes India's $250B IT industry. It sets curriculum standards, certifies trainers, and ensures graduates enter the workforce ready to contribute from day one.</p>
+            <p>Our accreditation means every course we teach — from software development to digital marketing — is benchmarked against what India's biggest employers actually need. No guesswork, no outdated syllabi.</p>
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px;">
+              <div class="wb-why-card reveal">
+                <div class="wb-why-icon">🏆</div>
+                <div><h4>Verified by Industry Leaders</h4><p>Curriculum reviewed and approved by technology companies in NASSCOM's member network.</p></div>
+              </div>
+              <div class="wb-why-card reveal delay-1">
+                <div class="wb-why-icon">🌐</div>
+                <div><h4>Globally Accepted Credentials</h4><p>NASSCOM certifications are recognized across 38+ countries by multinational employers.</p></div>
+              </div>
+              <div class="wb-why-card reveal delay-2">
+                <div class="wb-why-icon">📈</div>
+                <div><h4>Higher Hiring Preference</h4><p>Recruiters actively seek NASSCOM-trained candidates — putting our graduates ahead in interviews.</p></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-     OUR NASSCOM PROGRAMS
-======================================================== -->
+    <!-- ── BENEFITS ── -->
+    <section class="wb-section wb-mou-grid-section" style="background:#f8fafc;">
+      <div class="wb-container">
+        <div style="text-align:center;margin-bottom:48px;" class="reveal">
+          <span class="wb-pill-badge">What You Gain</span>
+          <h2 class="wb-section-title" style="color:#1e3a8a;margin-top:12px;">Benefits of NASSCOM<br>Accredited Training</h2>
+        </div>
+        <div class="acc-benefits-grid">
+          <div class="acc-benefit-card reveal">
+            <div class="acc-benefit-icon" style="background:#eff6ff;">🎯</div>
+            <h4>Industry-Aligned Curriculum</h4>
+            <p>Every module is benchmarked to live industry requirements — not textbooks from 5 years ago.</p>
+          </div>
+          <div class="acc-benefit-card reveal delay-1">
+            <div class="acc-benefit-icon" style="background:#fef9c3;">🌍</div>
+            <h4>Global Recognition</h4>
+            <p>NASSCOM credentials are respected by employers worldwide, opening international career doors.</p>
+          </div>
+          <div class="acc-benefit-card reveal delay-2">
+            <div class="acc-benefit-icon" style="background:#f0fdf4;">💼</div>
+            <h4>Placement Advantage</h4>
+            <p>Recruiters from TCS, Infosys, Wipro and more actively hire NASSCOM-trained talent.</p>
+          </div>
+          <div class="acc-benefit-card reveal delay-3">
+            <div class="acc-benefit-icon" style="background:#fff7ed;">🔍</div>
+            <h4>Quality Audited</h4>
+            <p>Regular third-party audits ensure our training quality stays consistent and excellent.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROGRAMS ── -->
     <section class="wb-section wb-mou-grid-section">
       <div class="wb-container">
-        <h2 class="wb-section-title" style="text-align: center; margin-bottom: 40px; color: #1e3a8a;">NASSCOM-Aligned Programs</h2>
-        <div class="wb-mou-grid-wrapper">
-          <div class="wb-mou-grid">
-            <!-- Program 1 -->
-            <div class="wb-mou-item">
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Software Development</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6; margin-top: 12px;">Advanced programming and development practices aligned with NASSCOM standards for enterprise software.</p>
+        <div style="text-align:center;margin-bottom:48px;" class="reveal">
+          <span class="wb-pill-badge">Our Programs</span>
+          <h2 class="wb-section-title" style="color:#1e3a8a;margin-top:12px;">NASSCOM-Aligned<br>Courses at White Banger</h2>
+        </div>
+        <div class="acc-programs-grid">
+          <div class="acc-program-card reveal">
+            <div class="acc-program-num">01</div>
+            <div>
+              <h4>Software Development</h4>
+              <p>Full-stack development, programming best practices, and enterprise software architecture as specified by NASSCOM's Software Engineering standards.</p>
             </div>
-            <!-- Program 2 -->
-            <div class="wb-mou-item">
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Cloud & DevOps</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6; margin-top: 12px;">Cloud technologies and DevOps practices meeting industry-standard methodologies.</p>
+          </div>
+          <div class="acc-program-card reveal delay-1">
+            <div class="acc-program-num">02</div>
+            <div>
+              <h4>Cloud & DevOps</h4>
+              <p>AWS, Azure, and GCP cloud technologies alongside CI/CD pipelines and DevOps methodologies — aligned with NASSCOM's emerging tech frameworks.</p>
             </div>
-            <!-- Program 3 -->
-            <div class="wb-mou-item">
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">AI & Automation</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6; margin-top: 12px;">AI, machine learning, and automation technologies reshaping the IT landscape.</p>
+          </div>
+          <div class="acc-program-card reveal delay-2">
+            <div class="acc-program-num">03</div>
+            <div>
+              <h4>AI & Automation</h4>
+              <p>Machine learning, generative AI, and automation technologies that are reshaping the IT landscape — from NASSCOM's FutureSkills framework.</p>
             </div>
-            <!-- Program 4 -->
-            <div class="wb-mou-item">
-              <h4 class="wb-mou-name" style="color: #1e3a8a;">Digital Marketing</h4>
-              <p style="font-size: 14px; color: #4b5563; text-align: center; line-height: 1.6; margin-top: 12px;">Digital transformation strategies and marketing technologies for modern enterprises.</p>
+          </div>
+          <div class="acc-program-card reveal delay-3">
+            <div class="acc-program-num">04</div>
+            <div>
+              <h4>Digital Marketing & Analytics</h4>
+              <p>Data-driven marketing, SEO, performance analytics, and digital strategy grounded in NASSCOM's IT-enabled services curriculum.</p>
+            </div>
+          </div>
+          <div class="acc-program-card reveal delay-1">
+            <div class="acc-program-num">05</div>
+            <div>
+              <h4>UI/UX Design</h4>
+              <p>User research, wireframing, prototyping, and design systems built to NASSCOM's digital product standards and Figma-based workflows.</p>
+            </div>
+          </div>
+          <div class="acc-program-card reveal delay-2">
+            <div class="acc-program-num">06</div>
+            <div>
+              <h4>Cybersecurity Fundamentals</h4>
+              <p>Network security, ethical hacking basics, and data protection practices aligned with NASSCOM's information security training standards.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-     CTA SECTION
-======================================================== -->
-    <section class="wb-section" style="background: linear-gradient(135deg, #1a56db, #0e42a4); color: white;">
+    <!-- ── CTA ── -->
+    <section class="wb-section wb-mou-grid-section">
       <div class="wb-container">
-        <div style="text-align: center;">
-          <h2 class="wb-section-title" style="color: white; margin-bottom: 16px;">Ready to Get NASSCOM-Certified?</h2>
-          <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px; opacity: 0.9;">Join White Banger and earn industry-recognized certifications aligned with NASSCOM standards.</p>
-          <a href="contact.html" class="wb-btn wb-btn-primary" style="background: white; color: #1a56db;">Enroll Now</a>
+        <div class="acc-cta-strip reveal">
+          <div>
+            <h2>Ready to Earn NASSCOM-Certified Skills?</h2>
+            <p>Join thousands of White Banger graduates who are now working at India's top IT companies.</p>
+          </div>
+          <a href="contact.html" class="acc-cta-btn">
+            Enroll Now
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </section>
+  </main>
 
-    <!-- =========================================================
-     FOOTER
-======================================================== -->
   <footer class="wb-footer">
     <div class="wb-container">
       <div class="wb-footer-top">
-        <!-- Logo & Info -->
         <div class="wb-footer-col wb-footer-brand">
-          <a href="index.html" class="wb-logo">
-            <img src="assets/img/logo-main.png" alt="White Banger" class="wb-logo-img">
-          </a>
+          <a href="index.html" class="wb-logo"><img src="assets/img/logo-main.png" alt="White Banger" class="wb-logo-img"></a>
           <address class="wb-footer-contact">
             <div class="wb-footer-contact-item">
-              <span class="wb-fc-icon-wrap wb-fc-whatsapp">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
-                </svg>
-              </span>
-              <div class="wb-fc-text">
-                <small>WhatsApp</small>
-                <strong>+91 97283-20132</strong>
-              </div>
+              <span class="wb-fc-icon-wrap wb-fc-whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg></span>
+              <div class="wb-fc-text"><small>WhatsApp</small><strong>+91 97283-20132</strong></div>
             </div>
             <div class="wb-footer-contact-item">
-              <span class="wb-fc-icon-wrap wb-fc-email">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" />
-                </svg>
-              </span>
-              <div class="wb-fc-text">
-                <small>Email</small>
-                <strong>prikshit@whitebanger.org</strong>
-              </div>
+              <span class="wb-fc-icon-wrap wb-fc-email"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/></svg></span>
+              <div class="wb-fc-text"><small>Email</small><strong>prikshit@whitebanger.org</strong></div>
             </div>
           </address>
         </div>
-        <!-- About WB -->
         <div class="wb-footer-col">
           <h5 class="wb-footer-heading">About WB</h5>
           <ul class="wb-footer-links">
@@ -292,7 +445,6 @@
             <li><a href="approvals-accreditations.html">Approvals and Accreditations</a></li>
           </ul>
         </div>
-        <!-- Student Zone -->
         <div class="wb-footer-col">
           <h5 class="wb-footer-heading">Student Zone</h5>
           <ul class="wb-footer-links">
@@ -302,87 +454,42 @@
             <li><a href="admission-form.html">Admission Form</a></li>
           </ul>
         </div>
-        <!-- Connect with us & Social -->
         <div class="wb-footer-col">
           <h5 class="wb-footer-heading">Connect with us</h5>
           <div class="wb-social-links wb-social-blue">
-            <a href="#" class="wb-social-icon" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-              </svg>
-            </a>
-            <a href="#" class="wb-social-icon" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-              </svg>
-            </a>
-            <a href="#" class="wb-social-icon" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
-              </svg>
-            </a>
-            <a href="#" class="wb-social-icon" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="4" ry="4" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
+            <a href="#" class="wb-social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" class="wb-social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="4" ry="4"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" class="wb-social-icon" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
           </div>
-          <!-- App badges -->
           <div class="wb-app-badges wb-app-badges-column">
             <a href="#" class="wb-app-badge"><img src="assets/img/google-play-badge.png" alt="Get it on Google Play"></a>
             <a href="#" class="wb-app-badge"><img src="assets/img/app-store-badge.png" alt="Download on the App Store"></a>
           </div>
         </div>
       </div>
-      <!-- Footer Bottom -->
       <div class="wb-footer-bottom">
-        <div class="wb-footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Sitemap</a>
-        </div>
+        <div class="wb-footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div>
         <p class="wb-footer-copy">Copyright &copy; 2026 White Banger | Powered by White Banger Tech Private Limited</p>
       </div>
     </div>
   </footer>
 
-  <!-- Floating Buttons & Popups -->
   <aside aria-label="Floating Actions" class="wb-floating-buttons">
-    <!-- Call Popup -->
     <div class="wb-fab-popup" id="wbPopupCall">
-      <div class="wb-popup-header">
-        <span class="wb-popup-title">Call Us Directly</span>
-        <button class="wb-popup-close" id="wbCloseCall">&times;</button>
-      </div>
-      <div class="wb-popup-body">
-         <p>Please note that our phone lines are open from <strong>9:00 AM to 5:00 PM</strong>, Monday to Saturday.</p>
-         <a href="tel:+919728320132" class="wb-btn wb-btn-primary wb-btn-full">Call Now</a>
-      </div>
+      <div class="wb-popup-header"><span class="wb-popup-title">Call Us Directly</span><button class="wb-popup-close" id="wbCloseCall">&times;</button></div>
+      <div class="wb-popup-body"><p>Phone lines open <strong>9:00 AM – 5:00 PM</strong>, Mon–Sat.</p><a href="tel:+919728320132" class="wb-btn wb-btn-primary wb-btn-full">Call Now</a></div>
     </div>
-
-    <!-- WhatsApp Popup -->
     <div class="wb-fab-popup" id="wbPopupWhatsapp">
       <div class="wb-popup-header wb-whatsapp-header">
         <img src="assets/img/inquiry-modal-bg.png" alt="Support" class="wb-wa-avatar">
-        <div class="wb-wa-info">
-          <span class="wb-wa-title">Chat with us</span>
-          <span class="wb-wa-status">We reply within 10-20 minutes</span>
-        </div>
+        <div class="wb-wa-info"><span class="wb-wa-title">Chat with us</span><span class="wb-wa-status">We reply within 10-20 minutes</span></div>
         <button class="wb-popup-close" id="wbCloseWhatsapp">&times;</button>
       </div>
-      <div class="wb-popup-body">
-        <p>Our WhatsApp support is available <strong>24/7</strong> for any inquiries.</p>
-        <a href="https://wa.me/919728320132" target="_blank" class="wb-btn wb-btn-whatsapp wb-btn-full">Start Chat</a>
-      </div>
+      <div class="wb-popup-body"><p>WhatsApp support available <strong>24/7</strong>.</p><a href="https://wa.me/919728320132" target="_blank" class="wb-btn wb-btn-whatsapp wb-btn-full">Start Chat</a></div>
     </div>
   </aside>
 
   <script src="assets/js/wb-script.min.js"></script>
-
-  <!-- Firebase Database Integration -->
   <script type="module" src="assets/js/wb-database.js"></script>
 </body>
-
 </html>
