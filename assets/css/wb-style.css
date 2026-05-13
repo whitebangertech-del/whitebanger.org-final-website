@@ -976,6 +976,14 @@ img { display: block; max-width: 100%; }
   object-fit: contain;
   display: block;
 }
+.wb-place-logo-text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--c, #1a56db);
+  white-space: nowrap;
+  line-height: 1;
+}
 
 /* =========================================================
    FOOTER
@@ -1866,6 +1874,15 @@ img { display: block; max-width: 100%; }
   max-height: 25px;
   max-width: 100%;
   object-fit: contain;
+}
+.wb-pb-logo-card .wb-place-logo-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--c, #1a56db);
+  white-space: nowrap;
+  line-height: 1;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
